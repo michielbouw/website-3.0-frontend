@@ -10,6 +10,7 @@
 	<meta name="msapplication-TileImage" content="metro-tile.png">
 	<meta name="msapplication-TileColor" content="#ffde00">
 
+    <link rel="stylesheet" href="//yui.yahooapis.com/pure/0.5.0/pure-min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="sass/style.css">
     <link rel="stylesheet" type="text/css" media="screen" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/prettyPhoto.css">
@@ -304,12 +305,13 @@
                 <hr class="clear">
                 <!--<p>Er zijn nog geen reacties geplaatst</p>-->
                 <h2>Jouw reactie</h2>
-                <form action="/nieuws/createcomment/id/1012" method="post" tr="">
-                    <textarea rows="4" cols="30" name="news_comment[text]" id="news_comment_text"></textarea><input type="hidden" name="news_comment[user_id]" id="news_comment_user_id">
+                <form action="/nieuws/createcomment/id/1012" method="post" tr="" class="pure-form">
+                    <textarea rows="2" cols="60" name="news_comment[text]" id="news_comment_text"></textarea>
+                    <input type="hidden" name="news_comment[user_id]" id="news_comment_user_id">
                     <input type="hidden" name="news_comment[newsitem_id]" value="1012" id="news_comment_newsitem_id">
                     <input type="hidden" name="news_comment[id]" id="news_comment_id">
                     <input type="hidden" name="news_comment[_csrf_token]" value="a280c45e822ece5cde1aa6a9146afed5" id="news_comment__csrf_token">
-                    <p><input type="submit" value="Plaatsen"></p>
+                    <p><button type="submit" class="pure-button pure-button-primary">Plaatsen</button></p>
                 </form>
             </div>
         </div>

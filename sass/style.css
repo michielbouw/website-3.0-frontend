@@ -37,7 +37,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-body, html {
+body, html, .pure-g, .pure-g [class*="pure-u"] {
   font-family: "PT Sans", Helvetica, Verdana, sans-serif;
   width: 100%;
   font-size: 14px;
@@ -143,25 +143,32 @@ hr {
 
 h1 {
   font-size: 32px;
+  line-height: 32px;
   margin-bottom: 12px; }
 
 h2 {
   font-size: 26px;
-  margin-bottom: 12px;
-  font-weight: 500; }
+  line-height: 26px;
+  margin-bottom: 12px; }
 
 h3 {
   font-size: 18px;
+  line-height: 18px;
   font-weight: normal; }
 
 h4 {
   font-size: 16px;
+  line-height: 16px;
   font-weight: normal; }
 
 p {
   font-size: 14px;
   line-height: 18px;
   margin: 16px 0; }
+
+.pure-button-primary {
+  background: #ffdd00 !important;
+  color: #000 !important; }
 
 .clear {
   clear: both; }
@@ -218,7 +225,7 @@ Standard layout
     top: 0;
     z-index: 1000; }
     #mobileheader #logo img {
-      height: 100%;
+      height: 50px;
       width: auto; }
 
 #mobilemenu-left {
@@ -367,7 +374,7 @@ Standard layout
       #header nav.menu ul li#search a {
         color: #FFFFFF;
         height: 65px;
-        padding: 26.5px 6px;
+        padding: 0 6px;
         background: #000000;
         box-sizing: border-box; }
       #header nav.menu ul li#search a:hover {
@@ -383,10 +390,6 @@ Standard layout
   #header nav.menu li {
     display: inline-block;
     margin-right: 15px; }
-    @media screen and (min-width: 640px) and (max-width: 959px) {
-      #header nav.menu li {
-        font-size: 11px;
-        margin-right: 2px; } }
   #header nav.menu ul.sub_menu {
     display: none;
     background: #ffdd00;
@@ -597,10 +600,6 @@ Standard layout
   #header nav.menubottom li {
     display: inline-block;
     margin-right: 15px; }
-    @media screen and (min-width: 640px) and (max-width: 959px) {
-      #header nav.menubottom li {
-        font-size: 11px;
-        margin-right: 2px; } }
   #header nav.menubottom ul.sub_menu {
     display: none;
     background: rgba(0, 0, 0, 0.6);
@@ -685,11 +684,12 @@ Standard layout
         min-width: 209px;
         display: block; }
         #header #header_link p a span.title {
+          float: left;
           text-decoration: none;
-          padding: 7px 15px 0 0;
+          padding: 13px 15px 0 0;
           height: 65px;
           font-size: 18px;
-          line-height: 35px;
+          line-height: 20px;
           vertical-align: middle;
           display: inline-block; }
         #header #header_link p a span small {
@@ -704,7 +704,7 @@ Standard layout
           color: #FFFFFF;
           vertical-align: middle;
           background: #000000;
-          padding: 27px 10px;
+          padding: 0 10px;
           box-sizing: border-box; }
       #header #header_link p a:hover {
         background: #ffeb66;
@@ -784,6 +784,7 @@ Standard layout
     margin-bottom: 10px;
     width: 100%;
     height: 175px;
+    overflow: hidden;
     -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
@@ -820,14 +821,6 @@ Standard layout
       .box .box_100 .boxcontent h1 {
         font-size: 30px;
         line-height: 32px; }
-      .box .box_100 .boxcontent a {
-        background: #ffdd00;
-        text-decoration: none;
-        padding: 10px;
-        -webkit-border-radius: 1px;
-        -moz-border-radius: 1px;
-        -ms-border-radius: 1px;
-        border-radius: 1px; }
 
 /* CONTENT */
 .content {
@@ -986,12 +979,13 @@ Standard layout
           line-height: 50px;
           display: block; }
           .content .content-right #sidebar .sidebar_block .sidebar_content ul.calender li span.date {
+            float: left;
             text-decoration: none;
             padding: 0;
-            height: 25px;
+            height: 50px;
             width: 20%;
             font-size: 12px;
-            line-height: 25px;
+            line-height: 50px;
             display: inline-block; }
           .content .content-right #sidebar .sidebar_block .sidebar_content ul.calender li span.end_date {
             height: 25px;
@@ -1011,7 +1005,7 @@ Standard layout
             display: inline-block;
             vertical-align: middle; }
           .content .content-right #sidebar .sidebar_block .sidebar_content ul.calender li a {
-            padding: 20px 0;
+            padding: 0;
             height: 50px;
             width: 10%;
             line-height: 50px;
@@ -1033,7 +1027,7 @@ Standard layout
             font-size: 16px;
             line-height: 22px; }
           .content .content-right #sidebar .sidebar_block .sidebar_content ul.calender li:first-child a {
-            padding: 25px 0;
+            padding: 0;
             height: 60px;
             line-height: 60px;
             background: #ffdd00; }
@@ -1051,7 +1045,7 @@ Standard layout
             font-size: 16px;
             line-height: 22px; }
           .content .content-right #sidebar .sidebar_block .sidebar_content ul.calender li#today a {
-            padding: 25px 0;
+            padding: 0;
             height: 60px;
             line-height: 60px;
             background: #ffdd00; }
@@ -1059,11 +1053,12 @@ Standard layout
             background: #ECEBF9; }
         .content .content-right #sidebar .sidebar_block .sidebar_content ul.calender li#today:before {
           content: 'LIVE';
+          float: left;
           height: 30px;
           line-height: 30px;
           text-decoration: none;
           padding: 0 5px;
-          margin: 0 4% 0 0;
+          margin: 15px 4% 15px 0;
           width: 16%;
           font-size: 12px;
           font-weight: bold;
@@ -1112,10 +1107,6 @@ Standard layout
     margin-top: 310px;
     margin-bottom: 20px;
     padding: 0; }
-    @media screen and (max-width: 639px) {
-      .content .content-page {
-        width: 100%;
-        margin-top: 50px; } }
     .content .content-page .block_content_100 {
       float: left;
       width: 99%;
@@ -1135,10 +1126,10 @@ Standard layout
         float: left;
         width: 70%;
         margin: 0;
-        padding: 20px 20px; }
+        padding: 20px 20px 10px; }
         .content .content-page .block_content_100 .block_text h1 {
           margin-top: 15px;
-          line-height: 16px; }
+          margin-bottom: 5px; }
         .content .content-page .block_content_100 .block_text h3 {
           text-transform: uppercase; }
         .content .content-page .block_content_100 .block_text a {
@@ -1193,14 +1184,11 @@ Standard layout
       -moz-border-radius: 1px;
       -ms-border-radius: 1px;
       border-radius: 1px; }
-      @media screen and (max-width: 639px) {
-        .content .content-page .block_content_50 {
-          width: 100%; } }
       .content .content-page .block_content_50 .block_text {
-        padding: 20px 20px;
-        min-height: 250px; }
+        padding: 20px 20px 10px;
+        min-height: 255px; }
         .content .content-page .block_content_50 .block_text h2 {
-          line-height: 10px; }
+          margin-bottom: 5px; }
         .content .content-page .block_content_50 .block_text h4 {
           text-transform: uppercase; }
         .content .content-page .block_content_50 .block_text a {
@@ -1221,11 +1209,11 @@ Standard layout
         -ms-filter: brightness(0.9) contrast(1.6) saturate(1.4); }
       .content .content-page .block_content_50 .extra {
         background: #F1F1F1;
-        height: 50px;
         line-height: 50px;
         margin: 0;
         padding: 0;
-        text-align: center; }
+        text-align: center;
+        width: 100%; }
         .content .content-page .block_content_50 .extra a {
           text-decoration: none; }
         .content .content-page .block_content_50 .extra a:hover {
@@ -1254,15 +1242,97 @@ footer {
     float: left;
     display: inline-block;
     width: 25%; }
-    @media screen and (min-width: 321px) and (max-width: 639px) {
-      footer .footer_block {
-        width: 50%; } }
-    @media screen and (max-width: 320px) {
-      footer .footer_block {
-        width: 100%; } }
 
 /********************************************************
 Responsive setup
 ********************************************************/
+@media screen and (max-width: 1279px) {
+  #header nav.menu ul li a {
+    padding: 0 15px; }
+  #header nav.menubottom a {
+    padding: 0 8px; }
+
+  .content .content-page .block_content_50 .block_text {
+    min-height: 275px; } }
+@media screen and (max-width: 959px) {
+  #header nav.menu ul li a {
+    line-height: 32px;
+    padding: 0 10px;
+    font-size: 11px; }
+  #header nav.menu li {
+    font-size: 11px; }
+  #header nav.menu li:last-child {
+    float: left;
+    margin-left: 40px; }
+  #header nav.menubottom ul li a {
+    font-size: 10px; }
+  #header nav.menubottom li {
+    font-size: 10px; }
+  #header nav.menubottom ul.sub_menu li a {
+    font-size: 10px; }
+  #header nav.menubottom a {
+    padding: 0 8px; }
+
+  .box .box_100 .boxtitle {
+    width: 10%; }
+  .box .box_100 .boxcontent {
+    padding: 20px 20px 20px 10%;
+    width: 90%; }
+
+  .content {
+    overflow: hidden; }
+    .content .content-page .block_content_50 .block_text {
+      min-height: 300px; }
+    .content .content-page .block_content_50 .featured_image {
+      height: 100px; } }
+@media screen and (max-width: 639px) {
+  h1 {
+    font-size: 28px;
+    line-height: 28px;
+    margin-bottom: 10px; }
+
+  h2 {
+    font-size: 22px;
+    line-height: 22px;
+    margin-bottom: 10px; }
+
+  h3 {
+    font-size: 17px;
+    line-height: 17px; }
+
+  h4 {
+    font-size: 15px;
+    line-height: 15px; }
+
+  p {
+    font-size: 13px;
+    line-height: 17px;
+    margin: 14px 0; }
+
+  .box {
+    display: none; }
+
+  .content .content-page {
+    width: 100%;
+    margin-top: 60px; }
+    .content .content-page .block_content_100 {
+      width: 100%;
+      margin: 0 0 10px; }
+    .content .content-page .block_content_50 {
+      width: 100%;
+      margin: 0 0 10px; }
+      .content .content-page .block_content_50 .block_text {
+        min-height: 0; }
+
+  footer .footer_block {
+    width: 50%; } }
+@media screen and (max-width: 320px) {
+  .content .content-page .block_content_100 .featured_image {
+    display: none; }
+  .content .content-page .block_content_100 .block_text {
+    width: 100%; }
+
+  footer .footer_block {
+    width: 100%; } }
 
 /*# sourceMappingURL=style.css.map */

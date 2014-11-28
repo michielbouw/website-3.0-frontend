@@ -15,4 +15,10 @@ $(document).ready(function() {
 
 	$('.expand_reacties').simpleexpand();
 	$('.expand_page').simpleexpand();
+
+	$('table').addClass('pure-table');
+
+	$('.content .content-page .block_content_100 .featured_image').each(function() {
+		$(this).css('min-height', $(this).parents('.block_content_100').find('.block_text').height()+40);
+	});
 });

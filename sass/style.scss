@@ -85,7 +85,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-body, html {
+body, html, .pure-g, .pure-g [class *= "pure-u"] {
   font-family: $font-stack;
   width: 100%;
   font-size: 14px;
@@ -184,25 +184,33 @@ hr {
 }
 h1 {
   font-size: 32px;
+  line-height: 32px;
   margin-bottom: 12px;
 }
 h2 {
   font-size: 26px;
+  line-height: 26px;
   margin-bottom: 12px;
-  font-weight: 500;
 }
 h3 {
   font-size: 18px;
+  line-height: 18px;
   font-weight: normal;
 }
 h4 {
   font-size: 16px;
+  line-height: 16px;
   font-weight: normal;
 }
 p {
   font-size: 14px;
   line-height: 18px;
   margin: 16px 0;
+}
+
+.pure-button-primary {
+  background: $yellow !important;
+  color: $primary-color !important;
 }
 
 .clear {
@@ -247,7 +255,7 @@ Standard layout
   #logo {
     position: absolute; right: 10px; top: 0; z-index: 1000;
     img {
-      height: 100%;
+      height: 50px;
       width: auto;
     }
   }
@@ -365,7 +373,7 @@ Standard layout
         a {
           color: $white;
           height: 65px;
-          padding: 26.5px 6px;
+          padding: 0 6px;
           background: $black;
           box-sizing: border-box;
         }
@@ -387,7 +395,6 @@ Standard layout
     li {
       display: inline-block;
       margin-right: 15px;
-      @media screen and (min-width:640px) and (max-width:959px) { font-size: 11px; margin-right: 2px; }
     }
 
     ul.sub_menu {
@@ -631,7 +638,6 @@ Standard layout
     li {
       display: inline-block;
       margin-right: 15px;
-      @media screen and (min-width:640px) and (max-width:959px) { font-size: 11px; margin-right: 2px; }
     }
 
     ul.sub_menu {
@@ -727,11 +733,12 @@ Standard layout
         display: block;
 
         span.title {
+          float: left;
           text-decoration: none;
-          padding: 7px 15px 0 0;
+          padding: 13px 15px 0 0;
           height: 65px;
           font-size: 18px;
-          line-height: 35px;
+          line-height: 20px;
           vertical-align: middle;
           display: inline-block;
         }
@@ -748,7 +755,7 @@ Standard layout
           color: $white;
           vertical-align: middle;
           background: $black;
-          padding: 27px 10px;
+          padding: 0 10px;
           box-sizing: border-box;
         }
       }
@@ -809,6 +816,7 @@ Standard layout
     margin-bottom: 10px;
     width: 100%;
     height: 175px;
+    overflow: hidden;
     -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
@@ -848,12 +856,6 @@ Standard layout
       h1 {
         font-size: 30px;
         line-height: 32px;
-      }
-      a {
-        background: $yellow;
-        text-decoration: none;
-        padding: 10px;
-        @include border-radius(1px);
       }
     }
   }
@@ -1044,12 +1046,13 @@ Standard layout
               display: block;
 
               span.date {
+                float: left;
                 text-decoration: none;
                 padding: 0;
-                height: 25px;
+                height: 50px;
                 width: 20%;
                 font-size: 12px;
-                line-height: 25px;
+                line-height: 50px;
                 display: inline-block;
               }
               span.end_date {
@@ -1072,7 +1075,7 @@ Standard layout
                 vertical-align: middle;
               }
               a {
-                padding: 20px 0;
+                padding: 0;
                 height: 50px;
                 width: 10%;
                 line-height: 50px;
@@ -1101,7 +1104,7 @@ Standard layout
                 line-height: 22px;
               }
               a {
-                padding: 25px 0;
+                padding: 0;
                 height: 60px;
                 line-height: 60px;
                 background: $yellow;
@@ -1126,7 +1129,7 @@ Standard layout
                 line-height: 22px;
               }
               a {
-                padding: 25px 0;
+                padding: 0;
                 height: 60px;
                 line-height: 60px;
                 background: $yellow;
@@ -1137,11 +1140,12 @@ Standard layout
             }
             li#today:before {
               content: 'LIVE';
+              float: left;
               height: 30px;
               line-height: 30px;
               text-decoration: none;
               padding: 0 5px;
-              margin: 0 4% 0 0;
+              margin: 15px 4% 15px 0;
               width: 16%;
               font-size: 12px;
               font-weight: bold;
@@ -1207,8 +1211,6 @@ Standard layout
     margin-bottom: 20px;
     padding: 0;
 
-    @media screen and (max-width:639px) { width: 100%; margin-top: 50px; }
-
     .block_content_100 {
       float: left;
       width: 99%;
@@ -1226,11 +1228,11 @@ Standard layout
         float: left;
         width: 70%;
         margin: 0;
-        padding: 20px 20px;
+        padding: 20px 20px 10px;
 
         h1 {
           margin-top: 15px;
-          line-height: 16px;
+          margin-bottom: 5px;
         }
         h3 {
           text-transform: uppercase;
@@ -1292,14 +1294,12 @@ Standard layout
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
       @include border-radius(1px);
 
-      @media screen and (max-width:639px) { width: 100%; }
-
       .block_text {
-        padding: 20px 20px;
-        min-height: 250px;
+        padding: 20px 20px 10px;
+        min-height: 255px;
 
         h2 {
-          line-height: 10px;
+          margin-bottom: 5px;
         }
         h4 {
           text-transform: uppercase;
@@ -1322,11 +1322,11 @@ Standard layout
       }
       .extra {
         background: $lightgrey;
-        height: 50px;
         line-height: 50px;
         margin: 0;
         padding: 0;
         text-align: center;
+        width: 100%;
         a {
           text-decoration: none;
         }
@@ -1366,13 +1366,6 @@ footer {
     float: left;
     display: inline-block;
     width: 25%;
-
-    @media screen and (min-width: 321px) and (max-width: 639px) {
-      width: 50%;
-    }
-    @media screen and (max-width: 320px) {
-      width: 100%;
-    }
   }
 }
 
@@ -1381,13 +1374,172 @@ Responsive setup
 ********************************************************/
 @media screen and (min-width:1600px) {
 }
-@media screen and (min-width:1280px) and (max-width:1599px) {
+@media screen and (max-width:1599px) {
 }
-@media screen and (min-width:960px) and (max-width:1279px) {
+@media screen and (max-width:1279px) {
+  #header {
+    nav.menu {
+      ul {
+        li {
+          a {
+            padding: 0 15px;
+          }
+        }
+      }
+    }
+    nav.menubottom {
+      a {
+        padding: 0 8px;
+      }
+    }
+  }
+
+  .content {
+    .content-page {
+      .block_content_50 {
+        .block_text {
+          min-height: 275px;
+        }
+      }
+    }
+  }
 }
-@media screen and (min-width:640px) and (max-width:959px) {
+@media screen and (max-width:959px) {
+  #header {
+    nav.menu {
+      ul {
+        li {
+          a {
+            line-height: 32px;
+            padding: 0 10px;
+            font-size: 11px;
+          }
+        }
+      }
+      li {
+        font-size: 11px;
+      }
+      li:last-child {
+        float: left;
+        margin-left: 40px;
+      }
+    }
+    nav.menubottom {
+      ul {
+        li {
+          a {
+            font-size: 10px;
+          }
+        }
+      }
+      li {
+        font-size: 10px;
+      }
+      ul.sub_menu {
+        li {
+          a {
+            font-size: 10px;
+          }
+        }
+      }
+      a {
+        padding: 0 8px;
+      }
+    }
+  }
+
+  .box {
+    .box_100 {
+      .boxtitle {
+        width: 10%;
+      }
+      .boxcontent {
+        padding: 20px 20px 20px 10%;
+        width: 90%;
+      }
+    }
+  }
+  .content {
+    overflow: hidden;
+    .content-page {
+      .block_content_50 {
+        .block_text {
+          min-height: 300px;
+        }
+        .featured_image {
+          height: 100px;
+        }
+      }
+    }
+  }
 }
-@media screen and (min-width:321px) and (max-width:639px) {
+@media screen and (max-width:639px) {
+  h1 {
+    font-size: 28px;
+    line-height: 28px;
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-size: 22px;
+    line-height: 22px;
+    margin-bottom: 10px;
+  }
+  h3 {
+    font-size: 17px;
+    line-height: 17px;
+  }
+  h4 {
+    font-size: 15px;
+    line-height: 15px;
+  }
+  p {
+    font-size: 13px;
+    line-height: 17px;
+    margin: 14px 0;
+  }
+  .box {
+    display: none;
+  }
+  .content {
+    .content-page {
+      width: 100%;
+      margin-top: 60px;
+      .block_content_100 {
+        width: 100%;
+        margin: 0 0 10px;
+      }
+      .block_content_50 {
+        width: 100%;
+        margin: 0 0 10px;
+
+        .block_text {
+          min-height: 0;
+        }
+      }
+    }
+  }
+  footer {
+    .footer_block {
+      width: 50%;
+    }
+  }
 }
 @media screen and (max-width:320px) {
+  .content {
+    .content-page {
+      .block_content_100 {
+        .featured_image {
+          display: none;
+        }
+        .block_text {
+          width: 100%;
+        }
+      }
+    }
+  }
+  footer {
+    .footer_block {
+      width: 100%;
+    }
+  }
 }
