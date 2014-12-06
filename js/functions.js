@@ -1,7 +1,5 @@
 // YouTube and image popup
-$(document).ready(function() {
-	$("a[rel^='prettyPhoto']").prettyPhoto();
-
+$(window).load(function() {
 	/* SLIDER */
 	jQuery(function () {
 		jQuery("#header_image").responsiveSlides({
