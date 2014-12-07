@@ -1,0 +1,40 @@
+<div class="block_content">
+    <a href="images/theta/tromp.png" class="fresco"><img src="images/theta/tromp.png" alt="Tromp" class="news_image"></a>
+    <div class="news_items">
+        <h2><a href="/nieuws">Voorbeschouwing Tromp Boat Races</a></h2>
+        <p class="news_date">
+            <i class="fa fa-user"></i>
+            <a href="/leden">Marco Bouman</a>
+            <span class="fa fa-calendar"></span> vrijdag 17 okt 2014
+        </p>
+        <p>Afgelopen zaterdag stond in het teken van de Tromp Boat Races. Op het rustige water van het Hilversums kanaal werd een wedstrijd over 5250 meter gevaren. Voor Thêta lagen er vijftien boten aan de start.</p>
+        <p>De vrouwen trapten af in het eerste blok. De tweezonders met Eveline/Lisa en Margo/Marjan hebben laten zien dat er weer stappen gemaakt zijn de afgelopen weken. Waar ze op de Herfstregatta nog achter de twee van Euros lagen, bleken Eveline en Lisa nu toch echt sneller dan de dames uit Enschede. Voor Marjan en Margo was het de eerste wedstrijd samen, ze voeren een goede race wat een 6de plaats tot gevolg had. De resultaten van de drie dames skiffs waren wisselend. Isabelle had zich meer voorgesteld van de race in het LDSB 1x veld maar werd mede door een aanvaring met een brug helaas laatste. In ditzelfde veld liet Ellen zien dat ze veel beter is dan de rest. Met maar liefst één minuut verschil met de nummer twee veegde ze het veld aan. Ze was hiernaast ook nog sneller dan alle dames in de DSB 1x en LD 1x velden. Als laatste van het ochtendblok ging Lieke van start in het M18 1x veld, ze behaalde hierin een 9de plek.</p>
+        <p>Bij de zware heren waren er ook wisselende resultaten. Pim en Giedo werden in de skiff 11de en 16de. En de zware tweezonder met Christiaan en Johann was met een laatste plaats niet tevreden. Daarentegen was er een zeer nette prestatie van Nick en Sander in de andere zware twee. Ze werden met een nette tijd van 20:11.6 5de van het veld.</p>
+        <p>Voor middengroep licht lagen er vier skiffs en een tweezonder aan de start. De twee met Daniel en Felix werd knap 3de in het LSB 2- veld. De vier skiffs waren verdeeld over LH 1x en LSB 1x. In het SB-veld was er een 11de plaats voor Mattijs. Frank werd in dit veld 8ste, een knappe prestatie voor zijn tweede wedstrijd in de skiff. Arlan werd in het SA-veld laatste. Arne zette in ditzelfde veld een prima tijd neer van 21:34.3 en werd hiermee 3de. Als laatste waren de bedrijfsachten aan de beurt. De ASML 8+, met daarin Mark en Hans als invallers en Sebastiaan als stuur, kwam net te kort voor de overwinning in dit veld.</p>
+        <div class="clear"></div>
+    </div>
+    <p class="extra">
+        <a class="expand_reacties expanded" href="#">Reacties ({$ comments1.length $}) <i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+    </p>
+    <div class="content_expand extra_reacties">
+        <p ng-hide="comments1.length">Er zijn nog geen reacties geplaatst</p>
+        <div class="reactie" ng-repeat="comment in comments1 = (comments | filter:byNewsId(1) | orderBy:orderComments:1)">
+            <img src="images/unknown.gif">
+            <span class="reactie_name"><a href="/leden/{$ comment.user_id $}">{$ comment.user $}</a> <span class="reactie_date">{$ comment.datetime | date:'EEE d MMM yyyy, H:mm' $}</span> <a style="text-decoration: none;" href="" ng-click="removecomment($index)">x</a></span>
+            <span class="reactie_text">{$ comment.text $}</span>
+            <br class="clear">
+        </div>
+        <hr class="clear">
+        <h2>Jouw reactie</h2>
+        <form class="pure-form">
+            <textarea rows="2" cols="60" ng-model="text"></textarea>
+            <p><button ng-click="addcomment()" class="pure-button pure-button-primary">Plaatsen</button></p>
+        </form>
+    </div>
+</div>
+
+<div class="block_content">
+    <p class="extra">
+        <a href="javascript:history.back()"><i class="fa fa-angle-left"></i> Terug</a>
+    </p>
+</div>

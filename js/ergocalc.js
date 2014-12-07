@@ -60,11 +60,11 @@ angular.module('ergocalc', [])
         $scope.change4 = function() {
             if (!($scope.txtDist)) {
                 b = 8;
+            } else {
+                b = 9;
                 if ($scope.txtTimeMin != 0 || $scope.txtTimeSec != 0) {
                     b = 10;
                 }
-            } else {
-                b = 9;
             }
             calc();
         };

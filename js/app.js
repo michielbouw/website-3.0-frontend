@@ -33,9 +33,46 @@ angular.module('theta', ['truncate', 'ergocalc'])
             }
         };
     })
+    .directive('headerbox', function() {return {templateUrl: 'partials/header-box.html'};})
     .directive('newsindex', function() {
         return {
-            templateUrl: 'partials/page-index.html',
+            templateUrl: 'partials/news-index.html',
+            link: function(scope, element, attrs) {
+                angular.element(document).ready(function() {
+                    $('.expand_reacties').simpleexpand();
+                    $('.expand_page').simpleexpand();
+
+                    $('table').addClass('pure-table');
+                });
+            }
+        };
+    })
+    .directive('newssingle', function() {
+        return {
+            templateUrl: 'partials/news-single.html',
+            link: function(scope, element, attrs) {
+                angular.element(document).ready(function() {
+                    $('.expand_reacties').simpleexpand();
+                    $('.expand_page').simpleexpand();
+
+                    $('table').addClass('pure-table');
+                });
+            }
+        };
+    })
+    .directive('page', function() {
+        return {
+            templateUrl: 'partials/page.html',
+            link: function(scope, element, attrs) {
+                angular.element(document).ready(function() {
+                    $('table').addClass('pure-table');
+                });
+            }
+        };
+    })
+    .directive('pageoverview', function() {
+        return {
+            templateUrl: 'partials/page-overview.html',
             link: function(scope, element, attrs) {
                 angular.element(document).ready(function() {
                     $('.expand_reacties').simpleexpand();
@@ -57,16 +94,19 @@ angular.module('theta', ['truncate', 'ergocalc'])
         $scope.item = [{}];
         $scope.item.title = 'Voorbeschouwing Tromp Boat Races';
 
+        $scope.newsitem_id = 1;
         $scope.datetime = new Date();
         $scope.user_id = '38001';
         $scope.user = 'Michiel Bouw';
         $scope._crfs_token = 'a280c45e822ece5cde1aa6a9146afed5';
 
-        $scope.item.comments = [{text:'Dit is een test comment voor nu dan even.', user_id: '38001', user: 'Test User', datetime: angular.copy($scope.datetime), _crfs_token: 'a280c45e822ece5cde1aa6a9146afed5'}];
+        $scope.comments = [{newsitem_id: 1, text:'Dit is een test comment voor nu dan even.', user_id: '38001', user: 'Test User', datetime: angular.copy($scope.datetime), _crfs_token: 'a280c45e822ece5cde1aa6a9146afed5'},
+            {newsitem_id: 2, text:'Dit is een tweede test comment voor nu dan even.', user_id: '38001', user: 'Test User 2', datetime: angular.copy($scope.datetime), _crfs_token: 'a280c45e822ece5cde1aa6a9146afed5'}];
 
         $scope.addcomment = function() {
             if($scope.text != '') {
-                $scope.item.comments.push({
+                $scope.comments.push({
+                    newsitem_id: $scope.newsitem_id,
                     text: $scope.text,
                     user_id: $scope.user_id,
                     user: $scope.user,
@@ -77,7 +117,13 @@ angular.module('theta', ['truncate', 'ergocalc'])
             }
         };
         $scope.removecomment = function($index) {
-            $scope.item.comments.splice($index, 1);
+            $scope.comments.splice($index, 1);
         };
+
+        $scope.byNewsId = function(newsId) {
+            return function(comment) {
+                return comment.newsitem_id == newsId;
+            }
+        }
         $scope.orderComments = 'datetime';
     }]);
