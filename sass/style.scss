@@ -2,7 +2,8 @@
   Name: Thetasite
   URI: http://www.esrtheta.nl
   Author: Michiel Bouw - E.S.R. Thêta
-  Date modified: 17-11-2014
+  Date created: 17-11-2014
+  Date modified: 10-12-2014 (by Michiel Bouw)
   Description:
   Version: 1.0
 */
@@ -886,9 +887,6 @@ ol, ul {
   margin-bottom: 20px;
   padding: 0;
 
-  @media screen and (min-width:640px) and (max-width:959px) { width: 100%; }
-  @media screen and (max-width:639px) { width: 100%; margin-top: 50px; }
-
   .block_content {
     width: 100%;
     padding: 0;
@@ -995,8 +993,6 @@ ol, ul {
   margin-top: 50vh;
   margin-bottom: 20px;
   padding: 0;
-
-  @media screen and (max-width:959px) { width: 100%; margin: 20px 0; }
 
   #sidebar {
     .sidebar_block {
@@ -1468,6 +1464,13 @@ Responsive setup
 }
 .content {
   overflow: hidden;
+  .content-left {
+    width: 100%;
+  }
+  .content-right {
+    width: 100%;
+    margin: 20px 0;
+  }
   .content-page {
     .block_content_50 {
       .block_text {
@@ -1508,6 +1511,13 @@ p {
   display: none;
 }
 .content {
+  .content-left {
+    width: 100%;
+    margin-top: 60px;
+  }
+  .content-left-page {
+    margin-top: 60px;
+  }
   .content-page {
     width: 100%;
     margin-top: 60px;

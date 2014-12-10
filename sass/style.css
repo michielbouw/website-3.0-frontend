@@ -3,7 +3,8 @@
   Name: Thetasite
   URI: http://www.esrtheta.nl
   Author: Michiel Bouw - E.S.R. Th├¬ta
-  Date modified: 17-11-2014
+  Date created: 17-11-2014
+  Date modified: 10-12-2014 (by Michiel Bouw)
   Description:
   Version: 1.0
 */
@@ -842,13 +843,6 @@ Standard layout
     margin-top: 47vh;
     margin-bottom: 20px;
     padding: 0; }
-    @media screen and (min-width: 640px) and (max-width: 959px) {
-      .content .content-left {
-        width: 100%; } }
-    @media screen and (max-width: 639px) {
-      .content .content-left {
-        width: 100%;
-        margin-top: 50px; } }
     .content .content-left .block_content {
       width: 100%;
       padding: 0;
@@ -928,10 +922,6 @@ Standard layout
     margin-top: 50vh;
     margin-bottom: 20px;
     padding: 0; }
-    @media screen and (max-width: 959px) {
-      .content .content-right {
-        width: 100%;
-        margin: 20px 0; } }
     .content .content-right #sidebar .sidebar_block {
       margin: 10px 0 10px 10px;
       background: #FFFFFF;
@@ -1287,6 +1277,11 @@ Responsive setup
 
   .content {
     overflow: hidden; }
+    .content .content-left {
+      width: 100%; }
+    .content .content-right {
+      width: 100%;
+      margin: 20px 0; }
     .content .content-page .block_content_50 .block_text {
       min-height: 300px; }
     .content .content-page .block_content_50 .featured_image {
@@ -1318,6 +1313,11 @@ Responsive setup
   .box {
     display: none; }
 
+  .content .content-left {
+    width: 100%;
+    margin-top: 60px; }
+  .content .content-left-page {
+    margin-top: 60px; }
   .content .content-page {
     width: 100%;
     margin-top: 60px; }

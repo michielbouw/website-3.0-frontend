@@ -10,8 +10,16 @@ angular.module('theta', ['truncate', 'ergocalc'])
         $interpolateProvider.startSymbol('{$');
         $interpolateProvider.endSymbol('$}');
     })
-
+    .directive('wrapper', function() {
+        return {
+            templateUrl: function(elem, attr) {
+                return 'page/page-' + attr.type + '.html';
+            }
+        }
+    })
     .directive('navmenu', function() {return {templateUrl: 'partials/nav-menu.html'};})
+    .directive('navmenuleden', function() {return {templateUrl: 'partials/nav-menu-leden.html'};})
+    .directive('navmenumob', function() {return {templateUrl: 'partials/nav-menu-mobile.html'};})
     .directive('ergocalc', function() {return {templateUrl: 'partials/ergo-calc.html'};})
     .directive('headerlink', function() {return {templateUrl: 'partials/header-link.html'};})
     .directive('headerimages', function() {
@@ -70,6 +78,7 @@ angular.module('theta', ['truncate', 'ergocalc'])
             }
         };
     })
+    .directive('pagelogin', function() {return {templateUrl: 'partials/page-login.html'};})
     .directive('pageoverview', function() {
         return {
             templateUrl: 'partials/page-overview.html',
@@ -124,6 +133,6 @@ angular.module('theta', ['truncate', 'ergocalc'])
             return function(comment) {
                 return comment.newsitem_id == newsId;
             }
-        }
+        };
         $scope.orderComments = 'datetime';
     }]);

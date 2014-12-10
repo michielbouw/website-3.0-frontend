@@ -15,32 +15,39 @@
     <link rel="stylesheet" type="text/css" media="screen" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/fresco/fresco.css"/>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
-
 </head>
 
 <body>
-    <div navmenu></div>
+    <input type="checkbox" name="handler-left" class="handler" id="handler-left" onclick="null" />
 
-<div id="wrapper">
-
-    <div headerimages></div>
-
-    <div headerbox></div>
-
-    <div class="container">
-    <div class="content">
-        <div newsindex class="content-left" ng-controller="news"></div>
-
-        <div sidebar class="content-right"></div>
-
+    <section id="mobilemenu-left">
+        <nav role="navigation" navmenumob></nav>
         <br class="clear" />
-    </div><!-- end content -->
-    </div><!-- end container -->
+    </section>
 
-    <footer>
-      <div footer></div>
-    </footer>
-      
+    <header id="mobileheader">
+        <div class="container">
+            <label for="handler-left" id="left" href="#">
+                <img src="images/icon-menu.png" />
+            </label>
+            <div id="logo">
+                <a href="/" title="home">
+                    <img src="images/logo_theta_mobile.png" />
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <header id="mainheader">
+        <div class="container" id="header">
+            <nav class="menu" role="navigation" navmenu></nav>
+            <!--<nav class="menubottom" navmenuleden></nav>-->
+            <div headerlink></div>
+        </div>
+        <br class="clear" />
+    </header>
+
+<div id="wrapper" wrapper type="index">
 </div><!-- end wrapper -->
 
 <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
