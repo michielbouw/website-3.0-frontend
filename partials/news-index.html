@@ -7,7 +7,7 @@
             <a href="/leden/{$ item.author_id $}">{$ item.author $}</a> namens <span class="black">{$ item.author_group $}</span>
             <span class="fa fa-calendar"></span> {$ item.pub_date | date:'EEE d MMM yyyy, H:mm' $}
         </p>
-        {$ item.itemtext | characters:400 $}
+        <p ng-bind-html="item.itemtext | characters:400 | html_trusted"></p>
         <div class="clear"></div>
     </div>
     <p class="extra">
@@ -17,7 +17,7 @@
         <p ng-hide="comments1.length">Er zijn nog geen reacties geplaatst</p>
         <div class="reactie" ng-repeat="comment in comments1 = (comment | filter:byNewsId(item.id))">
             <img src="images/unknown.gif">
-            <span class="reactie_name"><a href="/leden/{$ comment.user_id $}">{$ comment.user $}</a> <span class="reactie_date">{$ comment.datetime | date:'EEE d MMM yyyy, H:mm' $}</span> <a style="text-decoration: none;" href="" ng-click="removecomment(comment.id-1)">x</a></span>
+            <span class="reactie_name"><a href="/leden/{$ comment.user_id $}">{$ comment.user $}</a> <span class="reactie_date">{$ comment.date_created | date:'EEE d MMM yyyy, H:mm' $}</span> <a style="text-decoration: none;" href="" ng-click="removecomment(comment.id-1)">x</a></span>
             <span class="reactie_text">{$ comment.comment_text $}</span>
             <br class="clear">
         </div>
@@ -28,55 +28,6 @@
             <p><button ng-click="addcomment(item.id)" class="pure-button pure-button-primary">Plaatsen</button></p>
         </form>
     </div>
-</div>
-
-<div class="block_content">
-    <a href="images/theta/lisa.jpg" class="fresco"><img src="images/theta/lisa.jpg" alt="Lisa" class="news_image"></a>
-    <div class="news_items">
-        <h2><a href="/nieuws/">Finaleplek voor Lisa in de W8+!</a></h2>
-        <p class="news_date">
-            <i class="fa fa-user"></i>
-            <a href="/leden/37001">Elke Aarts</a> namens <span class="black">Bestuur</span>
-            <span class="fa fa-calendar"></span> vrijdag 30 mei 2014
-        </p>
-        <p>Update: Lisa behaalde een 4e plek in de finale!</p>
-        <p>Vanmiddag heeft Lisa in de W8+ een 2e plek behaald, een seconde achter Groot Britannië. Dit levert een rechtstreekse finale plek! Komende zondag zal om 13:48 uur de finale plaatsvinden. De race is <a href="http://www.worldrowing.com/events/2014-european-championships/" target="_blank">hier</a> live te volgen.</p>
-        <div class="clear"></div>
-    </div>
-</div>
-
-<div class="block_content">
-    <div class="news_items">
-        <h2><a href="/nieuws/">Lustrum Themabekendmaking 4 juni</a></h2>
-        <p class="news_date">
-            <i class="fa fa-user"></i>
-            <a href="/leden/37011">Maaike Bondrager</a> namens <span class="black">Lustrum</span>
-            <span class="fa fa-calendar"></span> vrijdag 30 mei 2014
-            <span class="fa fa-tag"></span> Leden
-        </p>
-        <p>De spanning is om te snijden onder alle Thêtanen. Welke kleuren zullen het aankomende jaar overheersen op onze loods? En wat gaat nou dat thema zijn? Na maanden van voorbereiding is de lustrumcommissie er klaar voor, het verlossende woord mag eruit! Of zouden het meerdere woorden zijn...?</p>
-        <p>Aanstaande woensdag wordt het thema van het 8<sup>e</sup> lustrum der E.S.R. Thêta onthuld! Dit thema zal het hele lustrumjaar centraal staan. Om 22:00 uur zal de&nbsp;officiële&nbsp;bekendmaking van het lustrumthema plaatsvinden op de loods. Voorafgaand hieraan, om 21:30 uur zal&nbsp;Thêta's nieuwste Acht gedoopt worden, die tot nu toe nog onder de naam 'Snog' op roeiwateren verschijnt.</p>
-        <p>Dus zorg dat je erbij bent woensdag!</p>
-        <div class="clear"></div>
-    </div>
-</div>
-
-<div class="block_content">
-    <a href="images/theta/herfst.jpg" class="fresco"><img src="images/theta/herfst.jpg" alt="Voorbeschouwing Elfsteden Roeimarathon 2014" class="news_image"></a>
-    <div class="news_items">
-        <h2><a href="/nieuws/">Voorbeschouwing Elfsteden Roeimarathon 2014</a></h2>
-        <p class="news_date">
-            <i class="fa fa-user"></i>
-            <a href="/leden/37066">Wouter van de Donk</a>
-            <span class="fa fa-calendar"></span> donderdag 29 mei 2014
-            <span class="fa fa-tag"></span> Competitie
-        </p>
-        <p>Aanstaande vrijdag om 20:00 is het weer zo ver: de jaarlijkse tocht der tochten, de Elfsteden Roeimarathon, gaat van start! De tocht langs de 11 Friese steden, die door iedereen in een C-dubbel-twee-met geroeid moet worden. Ook dit jaar zal er vanuit de E.S.R. Thêta weer een grootse afvaardiging worden gestuurd die de kleine 210 kilometer zo snel mogelijk zullen afleggen.</p>
-        <div class="clear"></div>
-    </div>
-    <p class="extra">
-        <a href="/nieuws/">Lees meer</a>
-    </p>
 </div>
 
 <div class="block_content">

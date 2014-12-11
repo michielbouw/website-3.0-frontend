@@ -1,4 +1,3 @@
-// YouTube and image popup
 $(window).load(function() {
 	/* SLIDER */
 	jQuery(function () {

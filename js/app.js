@@ -3,7 +3,7 @@
  *
  * December 2014, Michiel Bouw
  */
-angular.module('theta', ['truncate', 'ergocalc'])
+angular.module('theta', ['truncate', 'ergocalc', 'ngTable'])
     .config(function($httpProvider, $interpolateProvider) {
         $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
         // no interference with django symbols, so for angular use these:
@@ -33,7 +33,7 @@ angular.module('theta', ['truncate', 'ergocalc'])
                             jQuery("#header_image").responsiveSlides({
                                 auto: true,
                                 speed: 1000,
-                                timeout: 8000,
+                                timeout: 10000,
                                 nav: false,
                                 random: true
                             });
@@ -72,6 +72,18 @@ angular.module('theta', ['truncate', 'ergocalc'])
             }
         };
     })
+    .directive('newsarchief', function($timeout) {
+        return {
+            templateUrl: 'partials/news-archief.html',
+            link: function(scope, element, attrs) {
+                $timeout(function () {
+                    angular.element(document).ready(function () {
+                        $('table').addClass('pure-table');
+                    });
+                }, 0);
+            }
+        };
+    })
     .directive('page', function($timeout) {
         return {
             templateUrl: 'partials/page.html',
@@ -104,7 +116,23 @@ angular.module('theta', ['truncate', 'ergocalc'])
             }
         };
     })
-    .directive('sidebar', function() {return {templateUrl: 'partials/sidebar.html'};})
+    .directive('sidebar', function($timeout) {
+        return {
+            templateUrl: 'partials/sidebar.html',
+            link: function(scope, element, attrs) {
+                $timeout(function () {
+                    angular.element(document).ready(function () {
+                        jQuery(function () {
+                            jQuery(".sidebar_content #side_partner").responsiveSlides({ auto: true, speed: 1000, timeout: 10000, nav: false, random: true });
+                            jQuery(".sidebar_content #side_gold").responsiveSlides({ auto: true, speed: 1000, timeout: 10000, nav: false, random: true });
+                            jQuery(".sidebar_content #side_silver").responsiveSlides({ auto: true, speed: 1000, timeout: 10000, nav: false, random: true });
+                            jQuery(".sidebar_content #side_bronze").responsiveSlides({ auto: true, speed: 1000, timeout: 10000, nav: false, random: true });
+                        });
+                    });
+                }, 0);
+            }
+        };
+    })
     .directive('footer', function() {return {templateUrl: 'partials/footer.html'};})
     .directive('chatmodule', function($timeout) {
         return {
@@ -121,8 +149,17 @@ angular.module('theta', ['truncate', 'ergocalc'])
             }
         };
     })
-
-    .controller('news', ['$scope', '$http', function ($scope, $http) {
+    .filter('html_trusted', ['$sce', function($sce){
+        return function(text) {
+            return $sce.trustAsHtml(text);
+        };
+    }])
+    .controller('globalsearchform', ['$scope', function($scope) {
+        $scope.globalsearchform = function() {
+            void($('body').removeHighlight().highlight(this.globalsearch));
+        };
+    }])
+    .controller('news', ['$scope', '$http', '$filter', '$timeout', 'ngTableParams', function ($scope, $http, $filter, $timeout, ngTableParams) {
         $scope.item = [];
         $http({
             // get data from newsitem.json
@@ -162,22 +199,21 @@ angular.module('theta', ['truncate', 'ergocalc'])
                 })
             });
 
-        $scope.newsitem = 1;
         $scope.datetime = new Date();
-        $scope.user_id = '38001';
+        $scope.user_id = '38108';
         $scope.user = 'Michiel Bouw';
 
         $scope.addcomment = function(item_id) {
-            if($scope.addcomment_text != '') {
+            if(this.addcomment_text != '') {
                 $scope.comment.push({
                     id: $scope.comment.length+1,
                     newsitem: item_id,
-                    comment_text: $scope.addcomment_text,
+                    comment_text: this.addcomment_text,
                     user_id: $scope.user_id,
                     user: $scope.user,
                     date_created: $scope.datetime
                 });
-                $scope.addcomment_text = '';
+                this.addcomment_text = '';
             }
         };
         $scope.removecomment = function($index) {
@@ -188,4 +224,32 @@ angular.module('theta', ['truncate', 'ergocalc'])
                 return comment.newsitem == newsId;
             }
         };
+
+        $scope.tableParams = new ngTableParams({
+            page: 1,            // show first page
+            count: 10,           // count per page
+            filter: {
+                title: '',      // initial filter
+                author: '',
+                pub_date: ''
+            },
+            sorting: {
+                pub_date: 'desc'    // initial sorting
+            }
+        }, {
+            total: $scope.item.length, // length of data
+            getData: function($defer, params) {
+                $timeout(function() {
+                    var filteredData = params.filter() ?
+                        $filter('filter')($scope.item, params
+                            .filter()) :
+                        $scope.item;
+                    var orderedData = params.sorting() ?
+                        $filter('orderBy')(filteredData, params.orderBy()) :
+                        $scope.item;
+                    params.total(orderedData.length);
+                    $defer.resolve(orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+                }, 100);
+            }
+        });
     }]);

@@ -167,6 +167,9 @@ p {
   line-height: 18px;
   margin: 16px 0; }
 
+.highlight {
+  background-color: #ffdd00; }
+
 .pure-button-primary {
   background: #ffdd00 !important;
   color: #000 !important; }
@@ -1073,15 +1076,30 @@ Standard layout
             font-size: 10px;
             line-height: 14px;
             font-weight: normal; }
-        .content .content-right #sidebar .sidebar_block .sidebar_content a.partner_logos {
-          margin-top: 10px;
-          width: 100%;
-          height: 60px;
-          background-repeat: no-repeat;
-          background-position: center center;
-          background-size: auto 100%;
-          display: block;
-          text-decoration: none; }
+        .content .content-right #sidebar .sidebar_block .sidebar_content #side_partner, .content .content-right #sidebar .sidebar_block .sidebar_content #side_gold, .content .content-right #sidebar .sidebar_block .sidebar_content #side_silver, .content .content-right #sidebar .sidebar_block .sidebar_content #side_bronze {
+          height: 70px; }
+          .content .content-right #sidebar .sidebar_block .sidebar_content #side_partner .partner_logos, .content .content-right #sidebar .sidebar_block .sidebar_content #side_gold .partner_logos, .content .content-right #sidebar .sidebar_block .sidebar_content #side_silver .partner_logos, .content .content-right #sidebar .sidebar_block .sidebar_content #side_bronze .partner_logos {
+            margin: 5px 0;
+            width: 100%;
+            height: 60px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: auto 100%;
+            display: block;
+            text-decoration: none; }
+            .content .content-right #sidebar .sidebar_block .sidebar_content #side_partner .partner_logos span, .content .content-right #sidebar .sidebar_block .sidebar_content #side_gold .partner_logos span, .content .content-right #sidebar .sidebar_block .sidebar_content #side_silver .partner_logos span, .content .content-right #sidebar .sidebar_block .sidebar_content #side_bronze .partner_logos span {
+              height: 60px;
+              width: 5px;
+              float: left;
+              display: block; }
+            .content .content-right #sidebar .sidebar_block .sidebar_content #side_partner .partner_logos span.float_right, .content .content-right #sidebar .sidebar_block .sidebar_content #side_gold .partner_logos span.float_right, .content .content-right #sidebar .sidebar_block .sidebar_content #side_silver .partner_logos span.float_right, .content .content-right #sidebar .sidebar_block .sidebar_content #side_bronze .partner_logos span.float_right {
+              float: right; }
+            .content .content-right #sidebar .sidebar_block .sidebar_content #side_partner .partner_logos span.partner_gold, .content .content-right #sidebar .sidebar_block .sidebar_content #side_gold .partner_logos span.partner_gold, .content .content-right #sidebar .sidebar_block .sidebar_content #side_silver .partner_logos span.partner_gold, .content .content-right #sidebar .sidebar_block .sidebar_content #side_bronze .partner_logos span.partner_gold {
+              background-color: #CFB53B; }
+            .content .content-right #sidebar .sidebar_block .sidebar_content #side_partner .partner_logos span.partner_silver, .content .content-right #sidebar .sidebar_block .sidebar_content #side_gold .partner_logos span.partner_silver, .content .content-right #sidebar .sidebar_block .sidebar_content #side_silver .partner_logos span.partner_silver, .content .content-right #sidebar .sidebar_block .sidebar_content #side_bronze .partner_logos span.partner_silver {
+              background-color: #E6E8FA; }
+            .content .content-right #sidebar .sidebar_block .sidebar_content #side_partner .partner_logos span.partner_bronze, .content .content-right #sidebar .sidebar_block .sidebar_content #side_gold .partner_logos span.partner_bronze, .content .content-right #sidebar .sidebar_block .sidebar_content #side_silver .partner_logos span.partner_bronze, .content .content-right #sidebar .sidebar_block .sidebar_content #side_bronze .partner_logos span.partner_bronze {
+              background-color: #8C7853; }
       .content .content-right #sidebar .sidebar_block .extra {
         height: 50px;
         line-height: 50px;
@@ -1243,6 +1261,7 @@ footer {
 Chat module spamschrift
 ********************************************************/
 .module {
+  z-index: 100;
   position: fixed;
   bottom: 0;
   right: 20px;
