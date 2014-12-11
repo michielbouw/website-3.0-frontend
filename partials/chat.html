@@ -1,0 +1,116 @@
+    <header class="top-bar">
+        <div class="left">
+            <ul ng-init="tab = 1">
+                <li ng-class="{active:tab===1}">
+                    <span class="fa fa-comments-o"></span>
+                    <a href ng-click="tab = 1"><span ng-show="tab === 2">Spamschrift</span><strong ng-show="tab === 1">Spamschrift</strong></a>
+                </li>
+                &nbsp;
+                <li ng-class="{active:tab===2}">
+                    <span class="fa fa-thumbs-o-down"></span>
+                    <a href ng-click="tab = 2"><span ng-show="tab === 1">Frustschrift</span><strong ng-show="tab === 2">Frustschrift</strong></a>
+                </li>
+            </ul>
+        </div>
+        <div class="right">
+            <a href="" onclick="$('#discussionspam').hide();$('#discussionfrust').hide();$('#spamform').hide();$('.module .fa-angle-up').show();$('.module .fa-minus').hide();"><span class="fa fa-minus" style="display: none;"></span></a>
+            <a href="" onclick="$('#discussionspam').show();$('#discussionfrust').show();$('#spamform').show();$('.module .fa-angle-up').hide();$('.module .fa-minus').show();var objDiv = document.getElementById('discussionspam');objDiv.scrollTop = objDiv.scrollHeight;var objDiv1 = document.getElementById('discussionfrust');objDiv1.scrollTop = objDiv.scrollHeight;"><span class="fa fa-angle-up"></span></a>
+            &nbsp;
+            <a href="" onclick="$('.module').hide();"><span class="fa fa-close"></span></a>
+        </div>
+    </header>
+    <div id="discussionspam" ng-show="tab === 1" style="display: none;">
+    <ol class="discussion">
+        <li class="other">
+            <div class="avatar">
+                <img src="images/unknown.gif" />
+            </div>
+            <div class="messages">
+                <p>yeah, they do early flights cause they connect with big airports. they wanna get u to your connection</p>
+                <time>Timothy • 51 min</time>
+            </div>
+        </li>
+        <li class="self">
+            <div class="avatar">
+                <img src="images/unknown.gif" />
+            </div>
+            <div class="messages">
+                <p>yeah, they do early flights cause they connect with big airports. they wanna get u to your connection</p>
+                <time>51 min</time>
+            </div>
+        </li>
+        <li class="other">
+            <div class="avatar">
+                <img src="images/unknown.gif" />
+            </div>
+            <div class="messages">
+                <p>yeah, they do early flights cause they connect with big airports. they wanna get u to your connection</p>
+                <time>Timothy • 51 min</time>
+            </div>
+        </li>
+        <li class="self">
+            <div class="avatar">
+                <img src="images/unknown.gif" />
+            </div>
+            <div class="messages">
+                <p>That makes sense.</p>
+                <p>It's a pretty small airport.</p>
+                <time>37 mins</time>
+            </div>
+        </li>
+        <li class="other">
+            <div class="avatar">
+                <img src="images/unknown.gif" />
+            </div>
+            <div class="messages">
+                <p>that mongodb thing looks good, huh?</p>
+                <p>
+                    tiny master db, and huge document store</p>
+                <time>David • 2 min</time>
+            </div>
+        </li>
+    </ol>
+    </div>
+    <div id="discussionfrust" ng-show="tab === 2" style="display: none;">
+    <ol class="discussion">
+        <li class="self">
+            <div class="avatar">
+                <img src="images/unknown.gif" />
+            </div>
+            <div class="messages">
+                <p>yeah, they do early flights cause they connect with big airports. they wanna get u to your connection</p>
+                <time>51 min</time>
+            </div>
+        </li>
+        <li class="other">
+            <div class="avatar">
+                <img src="images/unknown.gif" />
+            </div>
+            <div class="messages">
+                <p>yeah, they do early flights cause they connect with big airports. they wanna get u to your connection</p>
+                <time>Timothy • 51 min</time>
+            </div>
+        </li>
+        <li class="self">
+            <div class="avatar">
+                <img src="images/unknown.gif" />
+            </div>
+            <div class="messages">
+                <p>That makes sense.</p>
+                <p>It's a pretty small airport.</p>
+                <time>37 mins</time>
+            </div>
+        </li>
+    </ol>
+    </div>
+    <form class="pure-form" id="spamform" style="display: none;">
+        <input type="text" placeholder="Uw bericht" style="width: 80%" /><button class="pure-button pure-button-primary" style="width: 20%" >Plaats</button>
+    </form>
+    <script type="text/javascript">
+        var scrollLow = function () {
+            var objDiv = document.getElementById('discussionspam');
+            objDiv.scrollTop = objDiv.scrollHeight;
+            var objDiv1 = document.getElementById('discussionfrust');
+            objDiv1.scrollTop = objDiv.scrollHeight;
+        };
+    </script>

@@ -1,0 +1,1 @@
+[{"pk": 1, "model": "index.comment", "fields": {"user": "test", "comment": "test", "newsitem": 2, "user_id": "12", "date_created": "2014-12-09T16:45:24.909Z"}}]

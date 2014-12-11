@@ -1,31 +1,31 @@
-<div class="block_content">
-    <a href="images/theta/tromp.png" class="fresco"><img src="images/theta/tromp.png" alt="Tromp" class="news_image"></a>
+<div class="block_content" ng-repeat="item in item | orderBy:orderNews:1">
+    <a href="media/{$ item.photo $}" class="fresco"><img src="media/{$ item.photo $}" class="news_image"></a>
     <div class="news_items">
-        <h2><a href="/nieuws">{$ item.title $}</a></h2>
+        <h2><a href="/nieuws/{$ item.id $}">{$ item.title $}</a></h2>
         <p class="news_date">
             <i class="fa fa-user"></i>
-            <a href="/leden">Marco Bouman</a>
-            <span class="fa fa-calendar"></span> vrijdag 17 okt 2014
+            <a href="/leden/{$ item.author_id $}">{$ item.author $}</a> namens <span class="black">{$ item.author_group $}</span>
+            <span class="fa fa-calendar"></span> {$ item.pub_date | date:'EEE d MMM yyyy, H:mm' $}
         </p>
-        <p>Morgen zal op het Hilversums kanaal de 29ste editie van de Tromp Boat Races plaats vinden. Met maar liefst 588 inschrijvingen in 40 nummers zal heel roeiend Nederland zich in Hilversum verzamelen. Voor Thêta gaan er 15 boten starten. Het is na de Herfstregatta de eerste echte wedstrijd van het seizoen.</p>
+        {$ item.itemtext | characters:400 $}
         <div class="clear"></div>
     </div>
     <p class="extra">
-        <a href="/nieuws/">Lees meer</a>&nbsp;&nbsp;•&nbsp;&nbsp;<a class="expand_reacties" href="#">Reacties ({$ comments1.length $}) <i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
+        <a href="/nieuws/{$ item.id $}">Lees meer</a>&nbsp;&nbsp;•&nbsp;&nbsp;<a class="expand_reacties" href="#">Reacties ({$ comments1.length $}) <i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
     </p>
     <div class="content_expand extra_reacties">
         <p ng-hide="comments1.length">Er zijn nog geen reacties geplaatst</p>
-        <div class="reactie" ng-repeat="comment in comments1 = (comments | filter:byNewsId(1) | orderBy:orderComments:1)">
+        <div class="reactie" ng-repeat="comment in comments1 = (comment | filter:byNewsId(item.id))">
             <img src="images/unknown.gif">
-            <span class="reactie_name"><a href="/leden/{$ comment.user_id $}">{$ comment.user $}</a> <span class="reactie_date">{$ comment.datetime | date:'EEE d MMM yyyy, H:mm' $}</span> <a style="text-decoration: none;" href="" ng-click="removecomment($index)">x</a></span>
-            <span class="reactie_text">{$ comment.text $}</span>
+            <span class="reactie_name"><a href="/leden/{$ comment.user_id $}">{$ comment.user $}</a> <span class="reactie_date">{$ comment.datetime | date:'EEE d MMM yyyy, H:mm' $}</span> <a style="text-decoration: none;" href="" ng-click="removecomment(comment.id-1)">x</a></span>
+            <span class="reactie_text">{$ comment.comment_text $}</span>
             <br class="clear">
         </div>
         <hr class="clear">
         <h2>Jouw reactie</h2>
         <form class="pure-form">
-            <textarea rows="2" cols="60" ng-model="text"></textarea>
-            <p><button ng-click="addcomment()" class="pure-button pure-button-primary">Plaatsen</button></p>
+            <textarea rows="2" cols="60" ng-model="addcomment_text"></textarea>
+            <p><button ng-click="addcomment(item.id)" class="pure-button pure-button-primary">Plaatsen</button></p>
         </form>
     </div>
 </div>
@@ -42,24 +42,6 @@
         <p>Update: Lisa behaalde een 4e plek in de finale!</p>
         <p>Vanmiddag heeft Lisa in de W8+ een 2e plek behaald, een seconde achter Groot Britannië. Dit levert een rechtstreekse finale plek! Komende zondag zal om 13:48 uur de finale plaatsvinden. De race is <a href="http://www.worldrowing.com/events/2014-european-championships/" target="_blank">hier</a> live te volgen.</p>
         <div class="clear"></div>
-    </div>
-    <p class="extra">
-        <a class="expand_reacties" href="#">Reacties ({$ comments2.length $}) <i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a>
-    </p>
-    <div class="content_expand extra_reacties">
-        <p ng-hide="comments2.length">Er zijn nog geen reacties geplaatst</p>
-        <div class="reactie" ng-repeat="comment in comments2 = (comments | filter:byNewsId(2) | orderBy:orderComments:1)">
-            <img src="images/unknown.gif">
-            <span class="reactie_name"><a href="/leden/{$ comment.user_id $}">{$ comment.user $}</a> <span class="reactie_date">{$ comment.datetime | date:'EEE d MMM yyyy, H:mm' $}</span> <a style="text-decoration: none;" href="" ng-click="removecomment($index)">x</a></span>
-            <span class="reactie_text">{$ comment.text $}</span>
-            <br class="clear">
-        </div>
-        <hr class="clear">
-        <h2>Jouw reactie</h2>
-        <form class="pure-form">
-            <textarea rows="2" cols="60" ng-model="text"></textarea>
-            <p><button ng-click="addcomment()" class="pure-button pure-button-primary">Plaatsen</button></p>
-        </form>
     </div>
 </div>
 
