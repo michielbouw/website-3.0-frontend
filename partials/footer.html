@@ -1,22 +1,4 @@
-<div class="container">
-  <div class="footer_block">
-    <strong>E.S.R. Thêta</strong><br>
-    Kanaaldijk Zuid 50<br>
-    5645 TA Eindhoven
-  </div>
-  <div class="footer_block">
-    <strong>Postadres</strong><br>
-    Postbus 817<br>
-    5600 AV Eindhoven
-  </div>
-  <div class="footer_block">
-    <strong>T</strong> 040-2438853<br>
-    <strong>E</strong> <a href="mailto:bestuur@esrtheta.nl">bestuur@esrtheta.nl</a><br>
-    <strong>IBAN</strong> NL04 ABNA 0570 9784 75
-  </div>
-  <div class="footer_block">
-      <br>
-    2014 © <a href="http://www.esrtheta.nl">E.S.R. Thêta</a>
-  </div>
+<div class="container" ng-controller="footer">
+  <div class="footer_block" ng-repeat="footer in items | orderBy:orderFooter" ng-bind-html="footer.footer_block | html_trusted"></div>
 </div>
 <br class="clear" />

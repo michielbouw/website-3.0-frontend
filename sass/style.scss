@@ -557,6 +557,10 @@ Standard layout
       }
       li#right {
         float: right;
+
+        ul.sub_menu {
+          right: 0;
+        }
       }
       li#frust .count, li#spam .count, li#right .info {
         position: absolute;
@@ -597,7 +601,7 @@ Standard layout
         position: absolute;
         top: 90%;
         left: 0;
-        height: 400px;
+        height: auto;
         width: auto;
         background: $lightgrey;
         text-align: center;
@@ -652,7 +656,6 @@ Standard layout
       padding: 0;
       margin: 0;
       top: 100%;
-      right: 0;
       width: 125px;
       height: auto;
       list-style-type: none;

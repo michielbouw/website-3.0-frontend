@@ -1,4 +1,4 @@
-    <div class="slider">
+    <div class="slider" ng-controller="headerimages">
       <ul id="header_image">
         <li style="background-image: url(images/header/1.jpg); background-position: center bottom;"></li>
         <li style="background-image: url(images/header/2.jpg); background-position: center bottom;"></li>
@@ -22,5 +22,8 @@
         <li style="background-image: url(images/header/20.jpg); background-position: center bottom;"></li>
         <li style="background-image: url(images/header/21.jpg); background-position: center bottom;"></li>
         <li style="background-image: url(images/header/22.jpg); background-position: center bottom;"></li>
+        <li style="background-image: url(images/header/23.jpg);"></li>
+
+        <li ng-repeat="item in items" style="background-image: url(media/{$ item.image $}); background-position: {$ item.position $};"></li>
       </ul>
     </div>

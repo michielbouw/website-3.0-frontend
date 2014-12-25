@@ -1,12 +1,9 @@
 <div class="box">
-    <div class="container">
+    <div class="container" ng-controller="headerbox">
         <div class="box_100" style="margin-top: 90px;">
             <div class="boxtitle"><img src="images/TUE.png"><p></p></div>
             <div class="boxcontent"><span class="box-close"><a href="" onclick="$('.box').hide()"><i class="fa fa-close"></i></a></span>
-                <h2>E.S.R. THÊTA</h2>
-                <p>De Eindhovense Studenten Roeivereniging Thêta is met meer dan 300 leden een van de grootste en succesvolste studenten sportverenigingen van Eindhoven.
-                    Thêta bevordert de roeisport in alle mogelijke facetten. Wil je weten hoe?</p>
-                <a class="pure-button pure-button-primary" href="/vereniging">Over de vereniging</a>
+                <div ng-bind-html="content | html_trusted"></div>
             </div>
         </div>
     </div>

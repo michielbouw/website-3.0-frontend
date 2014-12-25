@@ -1,38 +1,38 @@
 <ul>
     <li id="frust"><a href="/frustschrift">Frusten</a><div class="count">3</div></li>
     <li id="spam"><a href="/spamschrift">Spammen</a><div class="count">12</div></li>
-    <li><a href="/maaltijd">Eten</a></li>
-    <li><a href="/activiteit">Doen</a></li>
-    <li><a href="/kleding">Kleding</a></li>
-    <li><a href="/ledenlijst">Leden</a></li>
-    <li><a href="/downloads">Downloads</a></li>
-    <li><a href="/ergo">Ergo's</a></li>
+
+    <div ng-controller="ledenmenu">
+        <li ng-repeat="item in items | orderBy:orderLedenMenu"><a href="{$ item.item_url $}">{$ item.item_name $}</a>
+            <ul class="sub_menu" ng-show="subitem1.length > 0">
+                <li ng-repeat="subitem in subitem1 = (subitem | filter:byItemId(item.id) | orderBy:orderSubLedenMenu)"><a href="{$ subitem.item_url $}">{$ subitem.item_name $}</a></li>
+            </ul>
+        </li>
+    </div>
+
     <li id="erg-calc"><a href="">Ergo calculator</a>
         <div ergocalc class="calc"></div>
     </li>
     <li id="right"><a href="/leden/38108">&nbsp;Michiel Bouw &nbsp;&nbsp;<i class="fa fa-angle-down"></i></a><div class="info">Je bent ingelogd!</div>
         <ul class="sub_menu">
-            <li><a href="/leden/381808">Mijn profielpagina</a></li>
+            <li><a href="/leden/38108">Mijn profielpagina</a></li>
             <li><a href="/leden/38108/edit">Gegevens wijzigen</a></li>
-            <li><a href="/leden/wachtwoord">Wachtwoord wijzigen</a></li>
-            <li><a href="/logout">Uitloggen (Michiel)</a></li>
+            <li><a href="/beheer/password_change">Wachtwoord wijzigen</a></li>
+            <li><a href="/beheer/logout">Uitloggen (Michiel)</a></li>
         </ul>
     </li>
     <img class="user" src="images/unknown.gif">
     <li id="right"><a href="/beheer">Beheer &nbsp;&nbsp;<i class="fa fa-angle-down"></i></a>
         <ul class="sub_menu">
-            <li><a href="/beheer/nieuws/new">Nieuw nieuwsbericht</a></li>
-            <li><a href="/beheer/page">Pagina overzicht</a></li>
-            <li><a href="/beheer/kleding">Fanciebestellingen</a></li>
-            <li><a href="/beheer/ergometer">Ergometerlijst</a></li>
+            <li><a href="/beheer/index/newsitem/add">Nieuw nieuwsbericht</a></li>
+            <li><a href="/beheer/index/roeiverbod">Roeiverbod</a></li>
             <li><a href="/beheer/kalender">Kalender</a></li>
-            <li><a href="/beheer/roeiverbod">Roeiverbod</a></li>
             <hr>
             <li><a href="http://ledenbase.esrtheta.nl">Ledenbase</a></li>
-            <li><a href="/signup">Account aanmaken</a></li>
+            <li><a href="/beheer/auth/user/add">Account aanmaken</a></li>
             <li><a href="/beheer/auth">Account beheer</a></li>
             <hr>
-            <li><a href="/beheer/auth/reset">Reset wachtwoord</a></li>
+            <li><a href="/beheer/password_change">Reset wachtwoord</a></li>
         </ul>
     </li>
 </ul>

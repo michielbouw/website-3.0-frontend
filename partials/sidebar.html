@@ -2,14 +2,16 @@
                 <div class="sidebar_block">
                     <!--<h2>Leden en oud-leden der E.S.R. THÊTA</h2>-->
                     <p class="extra">
-                        <a href="/leden">Login</a>
+                        <a href="/beheer/login">Login</a>
                     </p>
                 </div>
-                <div class="sidebar_block">
-                    <h2>Roeiverbod</h2>
-                    <div class="sidebar_content">
-                        <div class="verbod">
-                            IJS<br><small>Bah..</small>
+                <div ng-controller="roeiverbod">
+                    <div class="sidebar_block" ng-repeat="item in items | filter:notEnded() | orderBy:orderVerbod:-1">
+                        <h2>Roeiverbod</h2>
+                        <div class="sidebar_content">
+                            <div class="verbod">
+                                {$ item.title $}<br><small>{$ item.description $}</small>
+                            </div>
                         </div>
                     </div>
                 </div>

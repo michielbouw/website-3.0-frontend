@@ -1,5 +1,5 @@
-<div id="header_link">
-    <p><a href="/">
-        <span class="title">Nieuwe website!<br><small>Meer lezen over de WWWcie kan hier...</small></span><span class="icon"><i class="fa fa-angle-right"></i></span>
+<div id="header_link" ng-controller="headerlink">
+    <p ng-repeat="item in items | filter:notEnded() | orderBy:orderHeaderLink:-1"><a href="{$ item.url $}">
+        <span class="title">{$ item.title $}<br><small>{$ item.description $}</small></span><span class="icon"><i class="fa fa-angle-right"></i></span>
     </a></p>
 </div>
