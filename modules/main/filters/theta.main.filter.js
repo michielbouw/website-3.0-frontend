@@ -3,7 +3,7 @@
  *
  * December 2014, Michiel Bouw
  */
-angular.module('theta.main', ['truncate', 'ergocalc', 'ngTable'])
+angular.module('theta.main')
     .filter('html_trusted', ['$sce', function($sce){
         return function(text) {
             return $sce.trustAsHtml(text);

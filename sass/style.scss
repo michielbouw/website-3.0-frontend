@@ -874,6 +874,44 @@ Standard layout
   }
 }
 
+/* HEADER LOGO */
+.header_logo {
+  width: 100%;
+  position: absolute;
+  top: 0;
+
+  .logo_left {
+    position: relative;
+    z-index: 10;
+    margin-top: 120px;
+    margin-bottom: 10px;
+    width: 50%;
+    height: 210px;
+    overflow: hidden;
+    float: left;
+    text-align: right;
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+  .logo_right {
+    position: relative;
+    z-index: 10;
+    margin-top: 120px;
+    margin-bottom: 10px;
+    width: 50%;
+    height: 210px;
+    overflow: hidden;
+    float: right;
+    text-align: right;
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+}
+
 /* CONTENT */
 .content {
 width: 100%;
@@ -1380,6 +1418,51 @@ ol, ul {
     clear: right;
   }
 }
+
+.content-photo {
+  float: left;
+  width: 100%;
+  margin-top: 0; // or 120px
+  margin-bottom: -10px;
+  padding: 0;
+  border-top: solid $dark 8px;
+
+  .block_content_photo {
+    height: auto;
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+
+    .photos {
+      width: 100%;
+      height: auto;
+      margin: 0;
+
+      a {
+        width: 25%;
+        height: auto;
+        margin: 0;
+
+        img {
+          width: 100%;
+          height: auto;
+          margin: 0;
+        }
+        span {
+          width: 100%;
+          padding: 15px;
+          text-decoration: none;
+          color: $white;
+          background: $menu-transparent;
+          display: block;
+          position: absolute;
+          bottom: 0;
+        }
+      }
+    }
+  }
+}
+
 }
 
 footer {

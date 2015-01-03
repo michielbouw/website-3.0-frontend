@@ -3,7 +3,7 @@
  *
  * December 2014, Michiel Bouw
  */
-angular.module('theta.main', ['truncate', 'ergocalc', 'ngTable'])
+angular.module('theta.main')
     .controller('globalsearchform', ['$scope', function($scope) {
         $scope.globalsearchform = function() {
             void($('body').removeHighlight().highlight(this.globalsearch));

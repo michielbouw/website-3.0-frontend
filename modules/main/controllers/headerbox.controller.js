@@ -3,7 +3,7 @@
  *
  * December 2014, Michiel Bouw
  */
-angular.module('theta.main', ['truncate', 'ergocalc', 'ngTable'])
+angular.module('theta.main')
     .controller('headerbox', ['$scope', '$http', function ($scope, $http) {
         $http({
             // get data

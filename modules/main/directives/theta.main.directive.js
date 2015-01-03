@@ -3,7 +3,7 @@
  *
  * December 2014, Michiel Bouw
  */
-angular.module('theta.main', ['truncate', 'ergocalc', 'ngTable'])
+angular.module('theta.main')
     .directive('wrapper', function() {
         return {
             templateUrl: function(elem, attr) {
@@ -104,6 +104,40 @@ angular.module('theta.main', ['truncate', 'ergocalc', 'ngTable'])
 
                         $('.content .content-page .block_content_100 .featured_image').each(function () {
                             $(this).css('min-height', $(this).parents('.block_content_100').find('.block_text').height() + 40);
+                        });
+                    });
+                }, 0);
+            }
+        };
+    })
+    .directive('pagephotoalbum', function($timeout) {
+        return {
+            templateUrl: 'partials/page-photoalbum.html',
+            link: function(scope, element, attrs) {
+                $timeout(function () {
+                    angular.element(document).ready(function () {
+                        var container = document.querySelector('.block_content_photo .photos');
+                        var msnry = new Masonry( container, {
+                            columnWidth: '#photo',
+                            itemSelector: '#photo',
+                            gutter: 0
+                        });
+                    });
+                }, 0);
+            }
+        };
+    })
+    .directive('pagephotoalbumsub', function($timeout) {
+        return {
+            templateUrl: 'partials/page-photoalbum-sub.html',
+            link: function(scope, element, attrs) {
+                $timeout(function () {
+                    angular.element(document).ready(function () {
+                        var container = document.querySelector('.block_content_photo .photos');
+                        var msnry = new Masonry( container, {
+                            columnWidth: '#photo',
+                            itemSelector: '#photo',
+                            gutter: 0
                         });
                     });
                 }, 0);

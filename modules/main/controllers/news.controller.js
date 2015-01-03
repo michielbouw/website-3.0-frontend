@@ -3,7 +3,7 @@
  *
  * December 2014, Michiel Bouw
  */
-angular.module('theta.main', ['truncate', 'ergocalc', 'ngTable'])
+angular.module('theta.main')
     .controller('news', ['$scope', '$http', '$filter', '$timeout', 'ngTableParams', function ($scope, $http, $filter, $timeout, ngTableParams) {
         $scope.item = [];
         $http({

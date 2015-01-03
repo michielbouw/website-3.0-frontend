@@ -4,6 +4,9 @@
  * December 2014, Michiel Bouw
  */
 
+// Add the main module to the theta app module
+angular.module('theta', ['theta.main']);
+
 // Add module "main"
 angular.module('theta.main', ['truncate', 'ergocalc', 'ngTable'])
     .config(function($httpProvider, $interpolateProvider) {

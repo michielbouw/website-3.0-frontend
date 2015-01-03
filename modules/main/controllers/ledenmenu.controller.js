@@ -3,7 +3,7 @@
  *
  * December 2014, Michiel Bouw
  */
-angular.module('theta.main', ['truncate', 'ergocalc', 'ngTable'])
+angular.module('theta.main')
     .controller('ledenmenu', ['$scope', '$http', function ($scope, $http) {
         $scope.items = [];
         $http({

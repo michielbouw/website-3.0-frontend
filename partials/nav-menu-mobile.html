@@ -10,18 +10,16 @@
     </div>
 
     <li><a href="login">Inloggen</a></li>
-    <li><a href="/leden">Leden</a>
+    <li ng-controller="ledenmenu" ng-show="ledenmenu.length > 0"><a href="/leden">Leden</a>
         <ul class="sub_menu">
             <li><a href="/frustschrift">Frusten</a></li>
             <li><a href="/spamschrift">Spammmen</a></li>
 
-            <div ng-controller="ledenmenu">
-                <li ng-repeat="item in items | orderBy:orderLedenMenu"><a href="{$ item.item_url $}">{$ item.item_name $}</a>
-                    <ul class="sub_menu" ng-show="subitem1.length > 0">
-                        <li ng-repeat="subitem in subitem1 = (subitem | filter:byItemId(item.id) | orderBy:orderSubLedenMenu)"><a href="{$ subitem.item_url $}">{$ subitem.item_name $}</a></li>
-                    </ul>
-                </li>
-            </div>
+            <li ng-repeat="item in ledenmenu = (items | orderBy:orderLedenMenu)"><a href="{$ item.item_url $}">{$ item.item_name $}</a>
+                <ul class="sub_menu" ng-show="subitem1.length > 0">
+                    <li ng-repeat="subitem in subitem1 = (subitem | filter:byItemId(item.id) | orderBy:orderSubLedenMenu)"><a href="{$ subitem.item_url $}">{$ subitem.item_name $}</a></li>
+                </ul>
+            </li>
 
             <li><a href="">Ergo calculator</a><div ergocalc class="calc"></div></li>
             <li id="right"><a href="/leden/38108">Michiel Bouw &nbsp;&nbsp;<i class="fa fa-angle-down"></i></a>

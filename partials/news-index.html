@@ -1,5 +1,5 @@
 <div class="block_content" ng-repeat="item in item | orderBy:orderNews:1">
-    <a href="media/{$ item.photo $}" class="fresco"><img src="media/{$ item.photo $}" class="news_image"></a>
+    <a ng-if="item.photo" href="media/{$ item.photo $}" class="fresco"><img src="media/{$ item.photo $}" class="news_image"></a>
     <div class="news_items">
         <h2><a href="/nieuws/{$ item.id $}">{$ item.title $}</a></h2>
         <p class="news_date">
