@@ -1440,13 +1440,16 @@ ol, ul {
 
       a {
         width: 25%;
-        height: auto;
+        height: 250px;
         margin: 0;
+        overflow: hidden;
 
         img {
           width: 100%;
           height: auto;
           margin: 0;
+          max-width: 100%;
+          display: block;
         }
         span {
           width: 100%;
@@ -1458,6 +1461,30 @@ ol, ul {
           position: absolute;
           bottom: 0;
         }
+      }
+      a:nth-child(5) {
+        width: 50%;
+        height: 500px;
+      }
+      a:nth-child(12) {
+        width: 50%;
+        height: 500px;
+      }
+      a:nth-child(15) {
+        width: 50%;
+        height: 500px;
+      }
+      a:nth-child(22) {
+        width: 50%;
+        height: 500px;
+      }
+      a:nth-child(25) {
+        width: 50%;
+        height: 500px;
+      }
+      a:nth-child(32) {
+        width: 50%;
+        height: 500px;
       }
     }
   }
