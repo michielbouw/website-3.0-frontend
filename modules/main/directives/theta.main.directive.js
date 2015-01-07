@@ -46,7 +46,7 @@ angular.module('theta.main')
                     angular.element(document).ready(function () {
                         $('.expand_reacties').simpleexpand();
                         $('.expand_page').simpleexpand();
-                        $('table').addClass('pure-table');
+                        $('table').addClass('table');
                     });
                 }, 0);
             }
@@ -60,7 +60,7 @@ angular.module('theta.main')
                     angular.element(document).ready(function () {
                         $('.expand_reacties').simpleexpand();
                         $('.expand_page').simpleexpand();
-                        $('table').addClass('pure-table');
+                        $('table').addClass('table');
                     });
                 }, 0);
             }
@@ -72,7 +72,7 @@ angular.module('theta.main')
             link: function(scope, element, attrs) {
                 $timeout(function () {
                     angular.element(document).ready(function () {
-                        $('table').addClass('pure-table');
+                        $('table').addClass('table');
                     });
                 }, 0);
             }
@@ -84,7 +84,7 @@ angular.module('theta.main')
             link: function(scope, element, attrs) {
                 $timeout(function () {
                     angular.element(document).ready(function () {
-                        $('table').addClass('pure-table');
+                        $('table').addClass('table');
                     });
                 }, 0);
             }
@@ -100,10 +100,10 @@ angular.module('theta.main')
                         $('.expand_reacties').simpleexpand();
                         $('.expand_page').simpleexpand();
 
-                        $('table').addClass('pure-table');
+                        $('table').addClass('table');
 
                         $('.content .content-page .block_content_100 .featured_image').each(function () {
-                            $(this).css('min-height', $(this).parents('.block_content_100').find('.block_text').height() + 40);
+                            $(this).css('height', $(this).parents('.block_content_100').find('.block_text').height() + 30);
                         });
                     });
                 }, 0);

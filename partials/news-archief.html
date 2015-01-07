@@ -1,9 +1,9 @@
-<div class="block_content">
+<div class="block_content col-lg-12">
     <div class="news_items">
         <h1>Nieuwarchief</h1>
         <p>Hieronder vind je een overzicht van al het nieuws op deze site. Zoeken in de losse velden kan via het invulveld onder de afzondelijke tabel titels. Voor zoeken op datum gebruik yyyy-mm-dd als format.</p>
         <hr>
-        <table ng-table="tableParams" template-pagination="custom/pager" show-filter="true" style="width: 100%">
+        <table class="table-bordered" ng-table="tableParams" template-pagination="custom/pager" show-filter="true" style="width: 100%">
             <tr ng-repeat="item in $data">
                 <td data-title="'Titel'" sortable="'title'" filter="{ 'title': 'text' }"><a href="/nieuws/{$ item.id $}">{$ item.title $}</a></td>
                 <td data-title="'Auteur'" sortable="'author'" filter="{ 'author': 'text' }">{$ item.author $}</td>
@@ -21,9 +21,9 @@
                 </li>
                 <li style="float: right;">
                     Items per pagina:
-                    <button class="pure-button" type="button" ng-class="{'active':params.count() == 10}" ng-click="params.count(10)">10</button>
-                    <button class="pure-button" type="button" ng-class="{'active':params.count() == 25}" ng-click="params.count(25)">25</button>
-                    <button class="pure-button" type="button" ng-class="{'active':params.count() == 50}" ng-click="params.count(50)">50</button>
+                    <button class="btn" type="button" ng-class="{'active':params.count() == 10}" ng-click="params.count(10)">10</button>
+                    <button class="btn" type="button" ng-class="{'active':params.count() == 25}" ng-click="params.count(25)">25</button>
+                    <button class="btn" type="button" ng-class="{'active':params.count() == 50}" ng-click="params.count(50)">50</button>
                 </li>
                 <br>
             </ul>

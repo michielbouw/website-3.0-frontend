@@ -1,42 +1,42 @@
-<div ng-controller="ergocalculator" style="width: 350px; max-width: 100%; height: auto; font-size: 11px; line-height: 16px; text-align: left; padding: 15px;">
+<div class="col-lg-12" ng-controller="ergocalculator" style="width: 350px; max-width: 100%; height: auto; font-size: 11px; line-height: 16px; text-align: left; padding: 15px;">
 <h3>Scores omrekenen</h3>
 <br>
 Vul minimaal &#233;&#233;n waarde in in de bovenste tabel en geef twee waarden in totaal. Of vul &#233;&#233;n waarde in in de onderste tabel; de afstand is standaard 2000 meter. Klik daarna op 'Reken'. Klik op 'Wis' om de berekende waarden te wissen. Klik nog een keer op 'Wis' om alle waarden te wissen.
 <br><br>
-<form name="frmErg" class="pure-form">
-    <table width="100%" cellspacing="3" cellpadding="5" border="0" style="font-size: 11px; line-height: 16px; border: none;">
-        <tbody>
-            <tr>
-                <td width="30%">Afstand</td>
-                <td><input type="number" min="0" ng-change="change1()" ng-model="txtDist"/> meter</td>
-            </tr>
-            <tr>
-                <td>Tijd</td>
-                <td><input type="number" min="0" ng-change="change2()" ng-model="txtTimeMin"/> min <input type="number" min="0" ng-change="change2()" ng-model="txtTimeSec"/> sec</td>
-            </tr>
-            <tr>
-                <td colspan="2"><hr>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table width="100%" cellspacing="3" cellpadding="5" style="font-size: 11px; line-height: 16px; border:none;">
-        <tbody>
-            <tr>
-                <td width="30%">/500m</td>
-                <td><input type="number" min="0" ng-change="change3()" ng-model="txtSplitMin"/> min <input type="number" min="0" ng-change="change3()" ng-model="txtSplitSec"/> sec</td>
-            </tr>
-            <tr>
-                <td>Vermogen</td>
-                <td><input type="number" min="0" ng-change="change4()" ng-model="txtPower"/> Watt</td>
-            </tr>
-            <tr>
-                <td>Snelheid</td>
-                <td><input type="number" min="0" ng-change="change5()" ng-model="txtSpeed"/> km/uur</td>
-            </tr>
-        </tbody>
-    </table>
-    <br>
-    <button class="pure-button pure-button-primary" ng-click="resetForm()">Wis</button>
+<form name="frmErg" class="col-lg-12 form-horizontal" style="padding-right: 15px;">
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Afstand</label>
+        <div class="col-sm-9 input-group">
+            <input type="number" class="form-control" min="0" ng-change="change1()" ng-model="txtDist"/><div class="input-group-addon">meter</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Tijd</label>
+        <div class="col-sm-9 input-group">
+            <input type="number" class="form-control" min="0" ng-change="change2()" ng-model="txtTimeMin"/><div class="input-group-addon">min</div>
+            <input type="number" class="form-control" min="0" ng-change="change2()" ng-model="txtTimeSec"/><div class="input-group-addon">sec</div>
+        </div>
+    </div>
+    <hr>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">/500m</label>
+        <div class="col-sm-9 input-group">
+            <input type="number" class="form-control" min="0" ng-change="change3()" ng-model="txtSplitMin"/><div class="input-group-addon">min</div>
+            <input type="number" class="form-control" min="0" ng-change="change3()" ng-model="txtSplitSec"/><div class="input-group-addon">sec</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Vermogen</label>
+        <div class="col-sm-9 input-group">
+            <input type="number" class="form-control" min="0" ng-change="change4()" ng-model="txtPower"/><div class="input-group-addon">Watt</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Snelheid</label>
+        <div class="col-sm-9 input-group">
+            <input type="number" class="form-control" min="0" ng-change="change5()" ng-model="txtSpeed"/><div class="input-group-addon">km/uur</div>
+        </div>
+    </div>
+    <button class="btn btn-primary" ng-click="resetForm()">Wis</button>
 </form>
 </div>

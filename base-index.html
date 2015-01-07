@@ -11,7 +11,7 @@
 	<meta name="msapplication-TileImage" content="metro-tile.png">
 	<meta name="msapplication-TileColor" content="#ffde00">
 
-    <link rel="stylesheet" href="//yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="sass/style.css">
     <link rel="stylesheet" type="text/css" media="screen" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/fresco/fresco.css">
@@ -42,9 +42,11 @@
 
     <header id="mainheader">
         <div class="container" id="header">
-            <nav class="menu" role="navigation" navmenu></nav>
-            <nav class="menubottom" navmenuleden></nav>
-            <div headerlink></div>
+            <div class="col-lg-12">
+                <nav class="menu" role="navigation" navmenu></nav>
+                <nav class="menubottom" navmenuleden></nav>
+                <div headerlink></div>
+            </div>
         </div>
         <br class="clear" />
     </header>
@@ -56,9 +58,9 @@
 
     <div class="container">
         <div class="content">
-            <div newsindex class="content-left" ng-controller="news"></div>
+            <div newsindex class="content-left col-md-9 col-lg-9" ng-controller="news"></div>
 
-            <div sidebar class="content-right"></div>
+            <div sidebar class="content-right col-md-3 col-lg-3"></div>
 
             <br class="clear" />
         </div><!-- end content -->
@@ -73,6 +75,7 @@
 
 <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/fresco/fresco.js"></script>
 <script type="text/javascript" src="js/util/rslides.js"></script>
 <script type="text/javascript" src="js/util/simple-expand.js"></script>

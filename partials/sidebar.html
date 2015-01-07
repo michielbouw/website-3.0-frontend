@@ -1,12 +1,11 @@
-            <div id="sidebar">
-                <div class="sidebar_block">
+                <div class="sidebar_block col-md-12">
                     <!--<h2>Leden en oud-leden der E.S.R. THÊTA</h2>-->
                     <p class="extra">
                         <a href="/beheer/login">Login</a>
                     </p>
                 </div>
                 <div ng-controller="roeiverbod">
-                    <div class="sidebar_block" ng-repeat="item in items | filter:notEnded() | orderBy:orderVerbod:-1">
+                    <div class="sidebar_block col-md-12" ng-repeat="item in items | filter:notEnded() | orderBy:orderVerbod:-1">
                         <h2>Roeiverbod</h2>
                         <div class="sidebar_content">
                             <div class="verbod">
@@ -15,7 +14,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="sidebar_block">
+                <div class="sidebar_block col-md-12">
                     <h2><a href="/kalender">Kalender</a></h2>
                     <div class="sidebar_content">
                         <ul class="calender">
@@ -34,7 +33,7 @@
                         <a href="/kalender">Meer</a>
                     </p>
                 </div>
-                <div class="sidebar_block">
+                <div class="sidebar_block col-md-12">
                     <div class="sidebar_content">
                         <div id="side_partner">
                             <a title="Partner" href="/sponsors/3" class="partner_logos" style="background-image: url('images/sponsors/TopSupport.png')"></a>
@@ -60,7 +59,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="sidebar_block">
+                <div class="sidebar_block col-md-12">
                     <h2><a href="http://jasjedasje.nl">Is het jasje/dasje vanavond?</a></h2>
                     <div class="sidebar_content">
                         <div class="jasje">
@@ -71,4 +70,3 @@
                         <a href="/leden">Wil ik niet, <small>ga naar uitschrijf formulier</small></a>
                     </p>
                 </div>
-            </div>

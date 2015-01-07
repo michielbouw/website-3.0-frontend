@@ -8,7 +8,17 @@
             <li style="width: 50%;"><a href="https://www.facebook.com/esrtheta" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
         </ul>
     </li>
-    <li id="search" ng-controller="globalsearchform"><a id="searchform_hide" onclick="$(this).hide();$('a#searchform_show').show();" href=""><i class="fa fa-search"></i></a><a id="searchform_show" style="display: none;" href=""><form class="pure-form"><strong><i onclick="$('a#searchform_show').hide();$('a#searchform_hide').show();$('body').removeHighlight();" class="fa fa-angle-right"></i></strong> &nbsp;<input ng-model="globalsearch" type="text" ng-change="globalsearchform()" class="pure-input-rounded" placeholder="zoeken.."/></form></a></li>
+    <li id="search" ng-controller="globalsearchform">
+        <a id="searchform_hide" onclick="$(this).hide();$('a#searchform_show').show();" href=""><i class="fa fa-search"></i></a>
+        <a id="searchform_show" style="display: none;" href="">
+            <form class="form-inline">
+            <div class="input-group">
+                <div class="input-group-addon"><strong><i onclick="$('a#searchform_show').hide();$('a#searchform_hide').show();$('body').removeHighlight();" class="fa fa-angle-right"></i></strong></div>
+                <input ng-model="globalsearch" type="text" ng-change="globalsearchform()" class="form-control" placeholder="zoeken.."/>
+            </div>
+            </form>
+        </a>
+    </li>
 
     <div ng-controller="mainmenu">
         <li ng-repeat="item in items | orderBy:orderMainMenu:-1"><a href="{$ item.item_url $}">{$ item.item_name $}</a>

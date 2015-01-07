@@ -1,4 +1,4 @@
-<div class="block_content" ng-repeat="item in item | orderBy:orderNews:1">
+<div class="block_content col-lg-12" ng-repeat="item in item | orderBy:orderNews:1">
     <a ng-if="item.photo" href="media/{$ item.photo $}" class="fresco"><img src="media/{$ item.photo $}" class="news_image"></a>
     <div class="news_items">
         <h2><a href="/nieuws/{$ item.id $}">{$ item.title $}</a></h2>
@@ -23,14 +23,14 @@
         </div>
         <hr class="clear">
         <h2>Jouw reactie</h2>
-        <form class="pure-form">
-            <textarea rows="2" cols="60" ng-model="addcomment_text"></textarea>
-            <p><button ng-click="addcomment(item.id)" class="pure-button pure-button-primary">Plaatsen</button></p>
+        <form>
+            <textarea rows="2" cols="60" class="form-control" ng-model="addcomment_text"></textarea>
+            <p><button ng-click="addcomment(item.id)" class="btn btn-primary">Plaatsen</button></p>
         </form>
     </div>
 </div>
 
-<div class="block_content">
+<div class="block_content col-lg-12">
     <p class="extra">
         <a href="/nieuws/archief">Oudere berichten</a>
     </p>
