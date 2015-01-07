@@ -1,0 +1,22 @@
+{
+  "name": "website3.0",
+  "version": "1.0.0",
+  "main": "sass/style.css",
+  "authors": [
+    "Michiel Bouw"
+  ],
+  "ignore": [
+    "**/*.txt"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.0",
+    "jquery-migrate": "~1.2.1",
+    "bootstrap": "~3.3.1",
+    "font-awesome": "~4.2.0",
+    "angular": "~1.3.6",
+    "ng-table": "~0.3.1",
+    "masonry": "~3.2.2",
+    "rslides": "https://github.com/viljamis/ResponsiveSlides.js.git"
+  },
+  "private": true
+}
