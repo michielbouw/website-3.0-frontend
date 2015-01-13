@@ -1,0 +1,166 @@
+<div ng-controller="news">
+<div class="block_content_100 col-xs-12 col-sm-12">
+    <div ng-if="(item|orderBy:orderNews)[0].photo" class="featured_image" style="background-image: url('media/{$ (item|orderBy:orderNews)[0].photo $}');"></div>
+    <div ng-if="!((item|orderBy:orderNews)[0].photo)" class="featured_image" style="background-image: url('images/theta/competitieroeien.jpg');"></div>
+    <div class="block_text">
+        <h1>Laatste nieuws</h1>
+        <h3>{$ (item|orderBy:orderNews)[0].title $}</h3>
+        <hr>
+        <p ng-bind-html="(item|orderBy:orderNews)[0].itemtext | characters:400 | html_trusted"></p>
+        <a href="/nieuws/{$ (item|orderBy:orderNews)[0].id $}">Lees meer</a>
+        <div class="clear"></div>
+    </div>
+</div>
+</div>
+
+<div class="block_content_100 col-xs-12 col-sm-12">
+    <div class="block_text">
+        <h1>Dagupdate</h1>
+        <h3>Het bestuur deelt mede</h3>
+        <hr>
+        <p>Op dit moment is er geen internet op de loods beschikbaar. Hierdoor zullen de stukken voor AV 180 met vertraging worden gepubliceerd. Dit zal uiterlijk morgen zijn.</p>
+        <p>De beloofde bestuurskilo's laten nog even op zich wachten, vandaag hebben wij de weegschaal even getest.</p>
+        <!--<a href="/nieuwsbestuur/1">Lees meer</a>-->
+        <div class="clear"></div>
+    </div>
+    <div class="featured_image" style="background-image: url('images/theta/bestuur40.jpg');"></div>
+</div>
+
+<div class="block_content_50 col-xs-12 col-sm-6">
+    <div class="block_text">
+        <h2>Verenigingshap</h2>
+        <h4>Eerstvolgende maaltijd</h4>
+        <hr>
+        <table class="table">
+        <thead>
+            <th>Datum</th>
+            <th>Sluiting</th>
+            <th>Kosten</th>
+            <th></th>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="/leden/maaltijd/1">maandag 26 jan</a></td>
+                <td>26 jan 17:00</td>
+                <td>€ 3.00</td>
+                <td><a href="/leden/maaltijd/1/inschrijven" class="btn btn-xs btn-primary">Inschrijven</a></td>
+            </tr>
+        </tbody>
+        </table>
+        <div class="clear"></div>
+    </div>
+    <p class="extra">
+        <a href="/leden/maaltijd">Meer details en maaltijden</a>
+    </p>
+</div>
+
+<div class="block_content_50 col-xs-12 col-sm-6">
+    <div class="block_text">
+        <h2>Nieuwste downloads</h2>
+        <hr>
+        <table class="table">
+            <thead>
+                <th>Naam</th>
+                <th></th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Begroting almanak</td>
+                    <td><a href="/downloads/1.pdf" class="btn btn-xs btn-primary">Download</a></td>
+                </tr>
+                <tr>
+                    <td>Convocaten AV 180</td>
+                    <td><a href="/downloads/2.pdf" class="btn btn-xs btn-primary">Download</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="clear"></div>
+    </div>
+    <p class="extra">
+        <a href="/leden/activiteiten">Meer downloads</a>
+    </p>
+</div>
+
+<div class="block_content_100 col-xs-12 col-sm-12">
+    <div class="block_text no_photo">
+        <h1>Activiteiten</h1>
+        <h3>Eerstvolgende activiteiten</h3>
+        <hr>
+        <table class="table">
+            <thead>
+                <th>Naam</th>
+                <th>Datum</th>
+                <th>Sluiting</th>
+                <th>Kosten</th>
+                <th>Inschrijvingen</th>
+                <th></th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="/leden/maaltijd/1">Lustrumweekend: activiteiten, ontbijt en diner</a></td>
+                    <td>vrijdag 27 feb</td>
+                    <td>19 dec 23:59</td>
+                    <td>€ 35.00</td>
+                    <td>98 / 150</td>
+                    <td><a href="/leden/maaltijd/1/inschrijven" class="btn btn-xs btn-primary">Inschrijven</a></td>
+                </tr>
+                <tr>
+                    <td><a href="/leden/maaltijd/1">Lustrumweekend: activiteiten, ontbijt en diner</a></td>
+                    <td>vrijdag 27 feb</td>
+                    <td>19 dec 23:59</td>
+                    <td>€ 35.00</td>
+                    <td>98 / 150</td>
+                    <td><a href="/leden/maaltijd/1/inschrijven" class="btn btn-xs btn-primary">Inschrijven</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="clear"></div>
+    </div>
+    <!--<p class="extra">
+        <a href="/leden/werkacties">Meer activiteiten</a>
+    </p>-->
+</div>
+
+<div class="block_content_100 col-xs-12 col-sm-12">
+    <div class="block_text no_photo">
+        <h1>Werkacties</h1>
+        <h3>Eerstvolgende werkacties</h3>
+        <hr>
+        <table class="table">
+            <thead>
+                <th>Naam</th>
+                <th>Datum</th>
+                <th>Sluiting</th>
+                <th>Inschrijvingen</th>
+                <th></th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="/leden/maaltijd/1">Schoolroeien</a></td>
+                    <td>maandag 2 feb</td>
+                    <td>15 jan 00:00</td>
+                    <td>4 / 3</td>
+                    <td><a href="/leden/maaltijd/1/inschrijven" class="btn btn-xs btn-primary">Inschrijven</a></td>
+                </tr>
+                <tr>
+                    <td><a href="/leden/maaltijd/1">Schoolroeien</a></td>
+                    <td>Vrijdag 6 feb</td>
+                    <td>15 jan 00:00</td>
+                    <td>4 / 3</td>
+                    <td><a href="/leden/maaltijd/1/inschrijven" class="btn btn-xs btn-primary">Inschrijven</a></td>
+                </tr>
+                <tr>
+                    <td><a href="/leden/maaltijd/1">Schoolroeien</a></td>
+                    <td>maandag 9 feb</td>
+                    <td>15 jan 00:00</td>
+                    <td>3 / 3</td>
+                    <td><a href="/leden/maaltijd/1/inschrijven" class="btn btn-xs btn-primary">Inschrijven</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="clear"></div>
+    </div>
+    <!--<p class="extra">
+        <a href="/leden/werkacties">Meer werkacties</a>
+    </p>-->
+</div>

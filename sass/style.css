@@ -138,7 +138,7 @@ img {
 
 hr {
   border: none;
-  border-bottom: 1px solid #979797;
+  border-bottom: 1px solid #F1F1F1;
   margin-bottom: 15px;
   padding-top: 5px; }
 
@@ -593,6 +593,8 @@ Standard layout
       z-index: 1;
       top: -5px;
       left: 25%; }
+    #header nav.menubottom ul li#erg-calc hr {
+      border-bottom: 1px solid #979797; }
     #header nav.menubottom ul li#erg-calc:hover > .calc {
       display: block; }
     #header nav.menubottom ul img.user {
@@ -897,7 +899,7 @@ Standard layout
       border-radius: 1px; }
       .content .content-left .block_content img.news_image {
         width: 100%;
-        max-height: 320px;
+        max-height: 350px;
         margin: 0 0 5px 0; }
       .content .content-left .block_content .news_items {
         padding: 20px 20px; }
@@ -956,6 +958,8 @@ Standard layout
             width: 95%; }
   .content .content-left-page {
     margin-top: 310px; }
+  .content .content-left-leden {
+    margin-top: 120px; }
   .content .content-right {
     margin-top: 50vh;
     margin-bottom: 20px; }
@@ -1102,6 +1106,12 @@ Standard layout
             font-size: 10px;
             line-height: 14px;
             font-weight: normal; }
+        .content .content-right .sidebar_block .sidebar_content .poll {
+          padding: 15px;
+          font-size: 12px;
+          background: #F1F1F1; }
+          .content .content-right .sidebar_block .sidebar_content .poll p {
+            font-size: 12px; }
         .content .content-right .sidebar_block .sidebar_content #side_partner, .content .content-right .sidebar_block .sidebar_content #side_gold, .content .content-right .sidebar_block .sidebar_content #side_silver, .content .content-right .sidebar_block .sidebar_content #side_bronze {
           height: 70px; }
           .content .content-right .sidebar_block .sidebar_content #side_partner .partner_logos, .content .content-right .sidebar_block .sidebar_content #side_gold .partner_logos, .content .content-right .sidebar_block .sidebar_content #side_silver .partner_logos, .content .content-right .sidebar_block .sidebar_content #side_bronze .partner_logos {
@@ -1141,10 +1151,13 @@ Standard layout
           font-size: 10px; }
   .content .content-right-page {
     margin-top: 350px; }
+  .content .content-right-leden {
+    margin-top: 160px; }
   .content .content-page {
     margin-top: 310px;
     margin-bottom: 20px;
-    padding: 0; }
+    padding: 0;
+    display: inline-block; }
     .content .content-page .block_content_100 {
       margin-bottom: 10px; }
       .content .content-page .block_content_100 .block_text {
@@ -1170,6 +1183,8 @@ Standard layout
         .content .content-page .block_content_100 .block_text a:hover {
           color: #000;
           text-decoration: underline; }
+      .content .content-page .block_content_100 .no_photo {
+        width: 100%; }
       .content .content-page .block_content_100 .featured_image {
         margin: 0;
         padding: 0;
@@ -1230,7 +1245,7 @@ Standard layout
       margin-bottom: 10px; }
       .content .content-page .block_content_50 .block_text {
         background: #FFFFFF;
-        min-height: 255px;
+        min-height: 235px;
         padding: 20px 20px 10px;
         -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
         -moz-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
@@ -1301,6 +1316,8 @@ Standard layout
         border-radius: 1px; }
     .content .content-page .block_content_50:nth-child(odd) {
       clear: right; }
+  .content .content-page-leden {
+    margin-top: 120px; }
   .content .content-photo {
     float: left;
     width: 100%;
@@ -1502,7 +1519,7 @@ Responsive setup
     padding: 0 8px; }
 
   .content .content-page .block_content_50 .block_text {
-    min-height: 275px; } }
+    min-height: 235px; } }
 @media screen and (max-width: 991px) {
   #header nav.menu ul li a {
     line-height: 32px;
@@ -1530,10 +1547,12 @@ Responsive setup
 
   .content .content-right {
     margin: 10px 0; }
-  .content .content-page .block_content_50 .block_text {
-    min-height: 310px; }
-  .content .content-page .block_content_50 .featured_image {
-    height: 100px; } }
+  .content .content-page {
+    margin-bottom: -5px; }
+    .content .content-page .block_content_50 .block_text {
+      min-height: 245px; }
+    .content .content-page .block_content_50 .featured_image {
+      height: 100px; } }
 @media screen and (max-width: 767px) {
   h1 {
     font-size: 28px;

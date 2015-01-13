@@ -13,8 +13,8 @@
             </ul>
         </div>
         <div class="right">
-            <a href="" onclick="$('#discussionspam').hide();$('#discussionfrust').hide();$('#spamform').hide();$('.module .fa-angle-up').show();$('.module .fa-minus').hide();"><span class="fa fa-minus" style="display: none;"></span></a>
-            <a href="" onclick="$('#discussionspam').show();$('#discussionfrust').show();$('#spamform').show();$('.module .fa-angle-up').hide();$('.module .fa-minus').show();var objDiv = document.getElementById('discussionspam');objDiv.scrollTop = objDiv.scrollHeight;var objDiv1 = document.getElementById('discussionfrust');objDiv1.scrollTop = objDiv.scrollHeight;"><span class="fa fa-angle-up"></span></a>
+            <a href="" onclick="$('#discussionspam').hide();$('#discussionfrust').hide();$('#frustform').hide();$('#spamform').hide();$('.module .fa-angle-up').show();$('.module .fa-minus').hide();"><span class="fa fa-minus" style="display: none;"></span></a>
+            <a href="" onclick="$('#discussionspam').show();$('#discussionfrust').show();$('#frustform').show();$('#spamform').show();$('.module .fa-angle-up').hide();$('.module .fa-minus').show();var objDiv = document.getElementById('discussionspam');objDiv.scrollTop = objDiv.scrollHeight;var objDiv1 = document.getElementById('discussionfrust');objDiv1.scrollTop = objDiv.scrollHeight;"><span class="fa fa-angle-up"></span></a>
             &nbsp;
             <a href="" onclick="$('.module').hide();"><span class="fa fa-close"></span></a>
         </div>
@@ -71,6 +71,14 @@
         </li>
     </ol>
     </div>
+    <form ng-show="tab === 1" role="form" id="spamform" style="display: none;">
+        <div class="form-group input-group">
+            <input type="text" class="form-control" placeholder="Uw spam" />
+        <span class="input-group-btn">
+            <button class="btn btn-primary">Plaats</button>
+        </span>
+        </div>
+    </form>
     <div id="discussionfrust" ng-show="tab === 2" style="display: none;">
     <ol class="discussion">
         <li class="self">
@@ -103,9 +111,9 @@
         </li>
     </ol>
     </div>
-    <form role="form" id="spamform" style="display: none;">
+    <form ng-show="tab === 2" role="form" id="frustform" style="display: none;">
         <div class="form-group input-group">
-            <input type="text" class="form-control" placeholder="Uw bericht" />
+            <input type="text" class="form-control" placeholder="Uw frust" />
             <span class="input-group-btn">
                 <button class="btn btn-primary">Plaats</button>
             </span>

@@ -3,12 +3,11 @@
  *
  * December 2014, Michiel Bouw
  */
-angular.module('theta.main')
+angular.module('theta.leden')
     .directive('navmenu', function() {return {templateUrl: 'partials/nav-menu.html'};})
     .directive('navmenuleden', function() {return {templateUrl: 'partials/nav-menu-leden.html'};})
     .directive('navmenumob', function() {return {templateUrl: 'partials/nav-menu-mobile.html'};})
     .directive('ergocalc', function() {return {templateUrl: 'partials/ergo-calc.html'};})
-    .directive('headerlink', function() {return {templateUrl: 'partials/header-link.html'};})
     .directive('headerimages', function($timeout) {
         return {
             templateUrl: 'partials/header-images.html',
@@ -30,47 +29,6 @@ angular.module('theta.main')
             }
         };
     })
-    .directive('headerbox', function() {return {templateUrl: 'partials/header-box.html'};})
-    .directive('newsindex', function($timeout) {
-        return {
-            templateUrl: 'partials/news-index.html',
-            link: function postLink(scope, element, attrs) {
-                $timeout(function () {
-                    angular.element(document).ready(function () {
-                        $('.expand_reacties').simpleexpand();
-                        $('.expand_page').simpleexpand();
-                        $('table').addClass('table');
-                    });
-                }, 0);
-            }
-        };
-    })
-    .directive('newssingle', function($timeout) {
-        return {
-            templateUrl: 'partials/news-single.html',
-            link: function(scope, element, attrs) {
-                $timeout(function () {
-                    angular.element(document).ready(function () {
-                        $('.expand_reacties').simpleexpand();
-                        $('.expand_page').simpleexpand();
-                        $('table').addClass('table');
-                    });
-                }, 0);
-            }
-        };
-    })
-    .directive('newsarchief', function($timeout) {
-        return {
-            templateUrl: 'partials/news-archief.html',
-            link: function(scope, element, attrs) {
-                $timeout(function () {
-                    angular.element(document).ready(function () {
-                        $('table').addClass('table');
-                    });
-                }, 0);
-            }
-        };
-    })
     .directive('page', function($timeout) {
         return {
             templateUrl: 'partials/page.html',
@@ -83,10 +41,9 @@ angular.module('theta.main')
             }
         };
     })
-    .directive('pagelogin', function() {return {templateUrl: 'partials/page-login.html'};})
-    .directive('pageoverview', function($timeout) {
+    .directive('pageleden', function($timeout) {
         return {
-            templateUrl: 'partials/page-overview.html',
+            templateUrl: 'partials/page-leden.html',
             link: function(scope, element, attrs) {
                 $timeout(function () {
                     angular.element(document).ready(function () {
@@ -103,43 +60,9 @@ angular.module('theta.main')
             }
         };
     })
-    .directive('pagephotoalbum', function($timeout) {
+   .directive('sidebar', function($timeout) {
         return {
-            templateUrl: 'partials/page-photoalbum.html',
-            link: function(scope, element, attrs) {
-                $timeout(function () {
-                    angular.element(document).ready(function () {
-                        var container = document.querySelector('.block_content_photo .photos');
-                        var msnry = new Masonry( container, {
-                            columnWidth: '#photo',
-                            itemSelector: '#photo',
-                            gutter: 0
-                        });
-                    });
-                }, 0);
-            }
-        };
-    })
-    .directive('pagephotoalbumsub', function($timeout) {
-        return {
-            templateUrl: 'partials/page-photoalbum-sub.html',
-            link: function(scope, element, attrs) {
-                $timeout(function () {
-                    angular.element(document).ready(function () {
-                        var container = document.querySelector('.block_content_photo .photos');
-                        var msnry = new Masonry( container, {
-                            columnWidth: '#photo',
-                            itemSelector: '#photo',
-                            gutter: 0
-                        });
-                    });
-                }, 0);
-            }
-        };
-    })
-    .directive('sidebar', function($timeout) {
-        return {
-            templateUrl: 'partials/sidebar.html',
+            templateUrl: 'partials/sidebar-leden.html',
             link: function(scope, element, attrs) {
                 $timeout(function () {
                     angular.element(document).ready(function () {

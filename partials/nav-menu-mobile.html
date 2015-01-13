@@ -12,8 +12,8 @@
     <li><a href="login">Inloggen</a></li>
     <li ng-controller="ledenmenu" ng-show="ledenmenu.length > 0"><a href="/leden">Leden</a>
         <ul class="sub_menu">
-            <li><a href="/frustschrift">Frusten</a></li>
             <li><a href="/spamschrift">Spammmen</a></li>
+            <li><a href="/frustschrift">Frusten</a></li>
 
             <li ng-repeat="item in ledenmenu = (items | orderBy:orderLedenMenu)"><a href="{$ item.item_url $}">{$ item.item_name $}</a>
                 <ul class="sub_menu" ng-show="subitem1.length > 0">

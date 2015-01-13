@@ -1,6 +1,6 @@
 <ul>
-    <li id="frust"><a href="/frustschrift">Frusten</a><div class="count">3</div></li>
     <li id="spam"><a href="/spamschrift">Spammen</a><div class="count">12</div></li>
+    <li id="frust"><a href="/frustschrift">Frusten</a><div class="count">3</div></li>
 
     <div ng-controller="ledenmenu">
         <li ng-repeat="item in items | orderBy:orderLedenMenu"><a href="{$ item.item_url $}">{$ item.item_name $}</a>
