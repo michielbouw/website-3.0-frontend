@@ -1,1 +1,34 @@
-[{"fields": {"item": "Eten", "item_position": 1, "item_url": "/leden/maaltijd"}, "pk": 4, "model": "index.ledenmenu"}, {"fields": {"item": "Ergo's", "item_position": 3, "item_url": "/leden/ergo"}, "pk": 6, "model": "index.ledenmenu"}, {"fields": {"item": "Leden", "item_position": 0, "item_url": "/leden"}, "pk": 3, "model": "index.ledenmenu"}, {"fields": {"item": "Doen", "item_position": 2, "item_url": "/leden/activiteiten"}, "pk": 5, "model": "index.ledenmenu"}]
+[{
+  "fields": {
+    "item": "Ergo's",
+    "item_position": 3,
+    "item_url": "/leden/ergo"
+  },
+  "pk": 1,
+  "model": "index.ledenmenu"
+}, {
+  "fields": {
+    "item": "Leden",
+    "item_position": 0,
+    "item_url": "/leden"
+  },
+  "pk": 2,
+  "model": "index.ledenmenu"
+}, {
+  "fields": {
+    "item": "Commissies",
+    "item_position": 1,
+    "item_url": "/commissies"
+  },
+  "pk": 3,
+  "model": "index.ledenmenu"
+}, {
+  "fields": {
+    "item": "Roeien",
+    "item_position": 2,
+    "item_url": "/leden/wedstrijdploegen"
+  },
+  "pk": 4,
+  "model": "index.ledenmenu"
+}
+]

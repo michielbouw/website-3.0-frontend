@@ -1,1 +1,92 @@
-[{"fields": {"item": "Kleding", "item_position": 1, "item_url": "/leden/kleding", "parent_submenu": 3}, "pk": 4, "model": "index.subledenmenu"}, {"fields": {"item": "Werkacties", "item_position": 1, "item_url": "/leden/werkacties", "parent_submenu": 5}, "pk": 7, "model": "index.subledenmenu"}, {"fields": {"item": "Ledenlijst", "item_position": 0, "item_url": "/leden/ledenlijst", "parent_submenu": 3}, "pk": 3, "model": "index.subledenmenu"}, {"fields": {"item": "Downloads", "item_position": 2, "item_url": "/leden/downloads", "parent_submenu": 3}, "pk": 5, "model": "index.subledenmenu"}, {"fields": {"item": "Activiteiten", "item_position": 0, "item_url": "/leden/activiteiten", "parent_submenu": 5}, "pk": 6, "model": "index.subledenmenu"}]
+[{
+  "fields": {
+    "item": "Kleding",
+    "item_position": 4,
+    "item_url": "/leden/kleding",
+    "parent_submenu": 2
+  },
+  "pk": 4,
+  "model": "index.subledenmenu"
+}, {
+  "fields": {
+    "item": "Werkacties",
+    "item_position": 3,
+    "item_url": "/leden/werkacties",
+    "parent_submenu": 2
+  },
+  "pk": 7,
+  "model": "index.subledenmenu"
+}, {
+  "fields": {
+    "item": "Ledenlijst",
+    "item_position": 1,
+    "item_url": "/leden/ledenlijst",
+    "parent_submenu": 2
+  },
+  "pk": 3,
+  "model": "index.subledenmenu"
+}, {
+  "fields": {
+    "item": "Downloads",
+    "item_position": 5,
+    "item_url": "/leden/downloads",
+    "parent_submenu": 2
+  },
+  "pk": 5,
+  "model": "index.subledenmenu"
+}, {
+  "fields": {
+    "item": "Activiteiten",
+    "item_position": 2,
+    "item_url": "/leden/activiteiten",
+    "parent_submenu": 2
+  },
+  "pk": 6,
+  "model": "index.subledenmenu"
+}, {
+  "fields": {
+    "item": "Verenigingshap",
+    "item_position": 0,
+    "item_url": "/leden/maaltijd",
+    "parent_submenu": 2
+  },
+  "pk": 7,
+  "model": "index.subledenmenu"
+}, {
+  "fields": {
+    "item": "Wedstrijdploegen",
+    "item_position": 0,
+    "item_url": "/leden/wedstrijdploegen",
+    "parent_submenu": 4
+  },
+  "pk": 7,
+  "model": "index.subledenmenu"
+}, {
+  "fields": {
+    "item": "Wedstrijduitslagen",
+    "item_position": 1,
+    "item_url": "/leden/uitslagen",
+    "parent_submenu": 4
+  },
+  "pk": 8,
+  "model": "index.subledenmenu"
+}, {
+  "fields": {
+    "item": "Competitieploegen",
+    "item_position": 2,
+    "item_url": "/leden/competitieploegen",
+    "parent_submenu": 4
+  },
+  "pk": 9,
+  "model": "index.subledenmenu"
+}, {
+  "fields": {
+    "item": "Competitieladder",
+    "item_position": 3,
+    "item_url": "/leden/competitieladder",
+    "parent_submenu": 4
+  },
+  "pk": 10,
+  "model": "index.subledenmenu"
+}
+]

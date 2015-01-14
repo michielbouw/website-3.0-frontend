@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="keywords" content="eindhoven, roeien, studenten, vereniging, theta, roeivereniging, studentenvereniging, TU/e">
-    <title>E.S.R. Thêta</title>
+    <title>E.S.R. Thêta - 404</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <meta name="msapplication-TileImage" content="metro-tile.png">
     <meta name="msapplication-TileColor" content="#ffde00">
 
-    <link rel="stylesheet" href="//yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="sass/style.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="bower_components/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/fresco/fresco.css">
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.min.js"></script>
-    <link rel="stylesheet" href="//bazalt-cms.com/assets/ng-table/0.3.1/ng-table.css">
+    <script src="bower_components/angular/angular.min.js"></script>
+    <link rel="stylesheet" href="bower_components/ng-table/ng-table.css">
 </head>
 
 <body>
@@ -42,8 +42,10 @@
 
 <header id="mainheader">
     <div class="container" id="header">
-        <nav class="menu" role="navigation" navmenu></nav>
-        <nav class="menubottom" navmenuleden></nav>
+        <div class="col-lg-12">
+            <nav class="menu" role="navigation" navmenu></nav>
+            <nav class="menubottom" navmenuleden></nav>
+        </div>
     </div>
     <br class="clear" />
 </header>
@@ -53,7 +55,7 @@
 
     <div class="container">
         <div class="content">
-            <div class="content-left content-left-page">
+            <div class="content-left content-left-page col-md-9 col-lg-9">
                 <div class="block_content">
                     <div class="block_page">
                         <h1>Page not found!</h1>
@@ -65,7 +67,7 @@
                 </div>
             </div>
 
-            <div sidebar class="content-right content-right-page"></div>
+            <div sidebar class="content-right content-right-page col-md-3 col-lg-3"></div>
 
             <br class="clear" />
         </div><!-- end content -->
@@ -77,14 +79,13 @@
 
 </div><!-- end wrapper -->
 
-<!--<section chatmodule class="module"></section>-->
-
-<script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="js/fresco/fresco.js"></script>
-<script type="text/javascript" src="js/util/rslides.js"></script>
+<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="bower_components/jquery-migrate/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="bower_components/rslides/responsiveslides.min.js"></script>
 <script type="text/javascript" src="js/util/simple-expand.js"></script>
 <script type="text/javascript" src="js/util/jquery.highlight-4.closure.js"></script>
+<script type="text/javascript" src="js/fresco/fresco.js"></script>
 <script type="text/javascript" src="js/functions.js"></script>
 <script src="modules/main/theta.main.module.js"></script>
 <script src="modules/main/controllers/footer.controller.js"></script>
@@ -100,7 +101,7 @@
 <script src="modules/main/filters/theta.main.filter.js"></script>
 <script src="js/truncate.js"></script>
 <script src="js/ergocalc.js"></script>
-<script src="//bazalt-cms.com/assets/ng-table/0.3.1/ng-table.js"></script>
+<script src="bower_components/ng-table/ng-table.js"></script>
 
 </body>
 </html>
