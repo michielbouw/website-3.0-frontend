@@ -49,11 +49,37 @@ angular.module('theta.leden')
                     angular.element(document).ready(function () {
                         $('.expand_reacties').simpleexpand();
                         $('.expand_page').simpleexpand();
-
                         $('table').addClass('table');
+                        $(function () {
+                            $('[data-toggle="tooltip"]').tooltip()
+                        });
 
                         $('.content .content-page .block_content_100 .featured_image').each(function () {
                             $(this).css('height', $(this).parents('.block_content_100').find('.block_text').height() + 30);
+                        });
+                        $('.content .content-page .block_content_50 #frust').each(function () {
+                            if ($(this).parents('.content-page').find('#spam').height() >= $(this).height()) {
+                                $(this).css('height', $(this).parents('.content-page').find('#spam').height());
+                            }
+                            else {
+                                $(this).parents('.content-page').find('#spam').css('height', $(this).height());
+                            }
+                        });
+                        $('.content .content-page .block_content_50 #hap').each(function () {
+                            if ($(this).parents('.content-page').find('#updates').height() >= $(this).height()) {
+                                $(this).css('height', $(this).parents('.content-page').find('#updates').height()+30);
+                            }
+                            else {
+                                $(this).parents('.content-page').find('#updates').css('height', $(this).height()+30);
+                            }
+                        });
+                        $('.content .content-page .block_content_50 #activiteit').each(function () {
+                            if ($(this).parents('.content-page').find('#compoladder').height() >= $(this).height()) {
+                                $(this).css('height', $(this).parents('.content-page').find('#compoladder').height()+30);
+                            }
+                            else {
+                                $(this).parents('.content-page').find('#compoladder').css('height', $(this).height()+30);
+                            }
                         });
                     });
                 }, 0);

@@ -8,44 +8,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="sidebar_block col-md-12">
-                    <h2>Poll</h2>
+                <div class="sidebar_block col-md-12" ng-controller="varsity" ng-show="days >= 0">
+                    <h2><a href="/wedstrijd/varsity">{{ number }}e Varsity</a></h2>
                     <div class="sidebar_content">
-                        <div class="poll">
-                            <strong>Geen internet dus geen spotify in 't Klootje. Tegen de stilte neem ik mee:</strong>
-                            <br><br>
-                            16CD Celine Dion Collection
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="100" style="width: 4%;">
-                                    4%
-                                </div>
-                            </div>
-                            Wereldmuziek uit m'n kerstpakket
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="19" aria-valuemin="0" aria-valuemax="100" style="width: 19%;">
-                                    19%
-                                </div>
-                            </div>
-                            Hitzone 1 t/m 43
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="31" aria-valuemin="0" aria-valuemax="100" style="width: 31%;">
-                                    31%
-                                </div>
-                            </div>
-                            Bootleg opname van Lustrumband
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="24" aria-valuemin="0" aria-valuemax="100" style="width: 24%;">
-                                    24%
-                                </div>
-                            </div>
-                            Spotify op m'n telefoon
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100" style="width: 12%;">
-                                    12%
-                                </div>
-                            </div>
+                        <div class="varsity">
+                            <strong>Nog {$ days $}</strong><br><small>{$ countdown $} tot de winst</small>
                         </div>
-                        <div class="clear"></div>
                     </div>
                 </div>
                 <div class="sidebar_block col-md-12">
@@ -67,7 +35,60 @@
                         <a href="/kalender">Meer</a>
                     </p>
                 </div>
+                <div>
+                    <div class="sidebar_block col-md-12">
+                        <h2>Foto van de dag</h2>
+                        <div class="sidebar_content">
+                            <div class="photo" style="background-image: url(media/photoalbum/01/5c222e62dea6033bbe82890ac8df69077b025a08.jpg)"></div>
+                        </div>
+                    </div>
+                </div>
                 <div class="sidebar_block col-md-12">
+                    <h2>Poll</h2>
+                    <div class="sidebar_content">
+                        <div class="poll">
+                            <strong>Geen internet dus geen spotify in 't Klootje. Tegen de stilte neem ik mee:</strong>
+                            <br>
+                            <form>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="blankRadio" id="blankRadio1" value="option1"> 6CD Celine Dion Collection
+                                </label>
+                                <label>
+                                    <input type="radio" name="blankRadio" id="blankRadio2" value="option2"> Wereldmuziek uit m'n kerstpakket
+                                </label>
+                                <label>
+                                    <input type="radio" name="blankRadio" id="blankRadio3" value="option3"> Hitzone 1 t/m 43
+                                </label>
+                                <label>
+                                    <input type="radio" name="blankRadio" id="blankRadio4" value="option4"> Bootleg opname van Lustrumband
+                                </label>
+                            </div>
+                            </form>
+
+                            <div id="result" style="display: none;">
+                                16CD Celine Dion Collection
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="100" style="width: 4%;">4%</div>
+                                </div>
+                                Wereldmuziek uit m'n kerstpakket
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="19" aria-valuemin="0" aria-valuemax="100" style="width: 19%;">19%</div>
+                                </div>
+                                Hitzone 1 t/m 43
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="31" aria-valuemin="0" aria-valuemax="100" style="width: 31%;">31%</div>
+                                </div>
+                                Bootleg opname van Lustrumband
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="24" aria-valuemin="0" aria-valuemax="100" style="width: 24%;">24%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <!--<div class="sidebar_block col-md-12">
                     <h2><a href="http://jasjedasje.nl">Is het jasje/dasje vanavond?</a></h2>
                     <div class="sidebar_content">
                         <div class="jasje">
@@ -77,7 +98,7 @@
                     <p class="extra">
                         <a href="/leden">Wil ik niet, <small>ga naar uitschrijf formulier</small></a>
                     </p>
-                </div>
+                </div>-->
                 <div class="sidebar_block col-md-12">
                     <div class="sidebar_content">
                         <div id="side_partner">

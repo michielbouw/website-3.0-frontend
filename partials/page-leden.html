@@ -1,26 +1,11 @@
-<div ng-controller="news">
-<div class="block_content_100 col-xs-12 col-sm-12">
-    <div ng-if="(item|orderBy:orderNews)[0].photo" class="featured_image" style="background-image: url('media/{$ (item|orderBy:orderNews)[0].photo $}');"></div>
-    <div ng-if="!((item|orderBy:orderNews)[0].photo)" class="featured_image" style="background-image: url('images/theta/competitieroeien.jpg');"></div>
-    <div class="block_text">
-        <h1>Laatste nieuws</h1>
-        <h3>{$ (item|orderBy:orderNews)[0].title $}</h3>
-        <hr>
-        <p ng-bind-html="(item|orderBy:orderNews)[0].itemtext | characters:400 | html_trusted"></p>
-        <a href="/nieuws/{$ (item|orderBy:orderNews)[0].id $}">Lees meer</a>
-        <div class="clear"></div>
-    </div>
-</div>
-</div>
-
 <div class="block_content_100 col-xs-12 col-sm-12">
     <div class="block_text">
-        <h1>Dagupdate</h1>
-        <h3>Het bestuur deelt mede</h3>
+        <h1>Bestuursmededelingen <span class="label label-primary" style="float: right;">Nieuw</span></h1>
+        <h3>Geen internet op de loods</h3>
         <hr>
         <p>Op dit moment is er geen internet op de loods beschikbaar. Hierdoor zullen de stukken voor AV 180 met vertraging worden gepubliceerd. Dit zal uiterlijk morgen zijn.</p>
         <p>De beloofde bestuurskilo's laten nog even op zich wachten, vandaag hebben wij de weegschaal even getest.</p>
-        <!--<a href="/nieuwsbestuur/1">Lees meer</a>-->
+        <a class="meer" href="/nieuwsbestuur/1">Lees meer <i class="fa fa-angle-right"></i></a>
         <div class="clear"></div>
     </div>
     <div class="featured_image" style="background-image: url('images/theta/bestuur40.jpg');"></div>
@@ -28,100 +13,262 @@
 
 <div class="block_content_50 col-xs-12 col-sm-6">
     <div class="block_text">
-        <h2>Verenigingshap</h2>
+        <h4>Spamschrift</h4>
+        <br>
+        <table class="table" id="spam">
+        <tbody>
+            <tr>
+                <td><a href="/leden/1">Luc van Dort</a></td>
+                <td>radioactieve onderbroeken</td>
+            </tr>
+            <tr>
+                <td><a href="/leden/1">Gijs Nelissen</a></td>
+                <td>Licht?</td>
+            </tr>
+            <tr>
+                <td><a href="/leden/1">Matthijs Kamerling</a></td>
+                <td>Kan je de herenkleedkamer ook doen? Daar licht ook allemaal toeli.</td>
+            </tr>
+            <tr>
+                <td><a href="/leden/1">Lisa Scheenaard</a></td>
+                <td>Voor de dames: Gezien er al lange tijd steeds meer handdoeken en andere meuk rondslingerden in de dameskleedkamer. Zou het kunnen zijn dat je die terug moet zoeken bij de gevonden voorwerpen</td>
+            </tr>
+        </tbody>
+        </table>
+        <a class="meer pull-right" href="/leden/spamschrift">Lul mee <i class="fa fa-angle-right"></i></a>
+        <div class="clear"></div>
+    </div>
+</div>
+
+<div class="block_content_50 col-xs-12 col-sm-6">
+    <div class="block_text">
+        <h4>Frustschrift</h4>
+        <br>
+        <table class="table" id="frust">
+            <tbody>
+                <tr>
+                    <td><a href="/leden/1">Eric Sillekens</a></td>
+                    <td>sancties riep het zesendertigste in koor</td>
+                </tr>
+                <tr>
+                    <td><a href="/leden/1">Eric Sillekens</a></td>
+                    <td>als we nu degene die de bananenschillen in de douch flikkert de bak laten repareren?</td>
+                </tr>
+                <tr>
+                    <td><a href="/leden/1">Jurriaan Drent</a></td>
+                    <td>Tering, is ook een klote streek, schiet je niets mee op en geeft alleen maar overlast...</td>
+                </tr>
+                <tr>
+                    <td><a href="/leden/1">Bart Versteeg</a></td>
+                    <td>Staat die buitencamera nog op de bak gericht of niet meer?</td>
+                </tr>
+            </tbody>
+        </table>
+        <a class="meer pull-right" href="/leden/frustschrift">Zeik mee <i class="fa fa-angle-right"></i></a>
+        <div class="clear"></div>
+    </div>
+</div>
+
+<div ng-controller="news">
+    <div class="block_content_100 col-xs-12 col-sm-12">
+        <div ng-if="(item|orderBy:orderNews)[0].photo" class="featured_image" style="background-image: url('media/{$ (item|orderBy:orderNews)[0].photo $}');"></div>
+        <div ng-if="!((item|orderBy:orderNews)[0].photo)" class="featured_image" style="background-image: url('images/theta/competitieroeien.jpg');"></div>
+        <div class="block_text">
+            <h1>Laatste nieuws <span class="label label-primary" style="float: right;">Nieuw</span></h1>
+            <h3>{$ (item|orderBy:orderNews)[0].title $}</h3>
+            <hr>
+            <p ng-bind-html="(item|orderBy:orderNews)[0].itemtext | characters:300 | html_trusted"></p>
+            <a class="meer" href="/nieuws/{$ (item|orderBy:orderNews)[0].id $}">Lees meer <i class="fa fa-angle-right"></i></a>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+
+<div class="block_content_50 col-xs-12 col-sm-6">
+    <div class="block_text" id="hap">
+        <h2><a href="/leden/maaltijd">Verenigingshap</a></h2>
         <h4>Eerstvolgende maaltijd</h4>
         <hr>
         <table class="table">
-        <thead>
+            <thead>
             <th>Datum</th>
             <th>Sluiting</th>
             <th>Kosten</th>
             <th></th>
-        </thead>
-        <tbody>
+            </thead>
+            <tbody>
             <tr>
                 <td><a href="/leden/maaltijd/1">maandag 26 jan</a></td>
                 <td>26 jan 17:00</td>
                 <td>€ 3.00</td>
                 <td><a href="/leden/maaltijd/1/inschrijven" class="btn btn-xs btn-primary">Inschrijven</a></td>
             </tr>
-        </tbody>
-        </table>
-        <div class="clear"></div>
-    </div>
-    <p class="extra">
-        <a href="/leden/maaltijd">Meer details en maaltijden</a>
-    </p>
-</div>
-
-<div class="block_content_50 col-xs-12 col-sm-6">
-    <div class="block_text">
-        <h2>Nieuwste downloads</h2>
-        <hr>
-        <table class="table">
-            <thead>
-                <th>Naam</th>
-                <th></th>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Begroting almanak</td>
-                    <td><a href="/downloads/1.pdf" class="btn btn-xs btn-primary">Download</a></td>
-                </tr>
-                <tr>
-                    <td>Convocaten AV 180</td>
-                    <td><a href="/downloads/2.pdf" class="btn btn-xs btn-primary">Download</a></td>
-                </tr>
+            <tr>
+                <td><a href="/leden/maaltijd/1">woensdag 28 jan</a></td>
+                <td>28 jan 17:00</td>
+                <td>€ 3.00</td>
+                <td><a href="/leden/maaltijd/1/inschrijven" class="btn btn-xs btn-primary">Inschrijven</a></td>
+            </tr>
+            <tr>
+                <td><a href="/leden/maaltijd/1">donderdag 29 jan</a></td>
+                <td>29 jan 17:00</td>
+                <td>€ 3.00</td>
+                <td><a href="/leden/maaltijd/1/inschrijven" class="btn btn-xs btn-primary">Inschrijven</a></td>
+            </tr>
+            <tr>
+                <td><a href="/leden/maaltijd/1">maandag 2 feb</a></td>
+                <td>2 feb 17:00</td>
+                <td>€ 3.00</td>
+                <td><a href="/leden/maaltijd/1/inschrijven" class="btn btn-xs btn-primary">Inschrijven</a></td>
+            </tr>
             </tbody>
         </table>
         <div class="clear"></div>
     </div>
-    <p class="extra">
-        <a href="/leden/activiteiten">Meer downloads</a>
-    </p>
+</div>
+
+<div class="block_content_50 col-xs-12 col-sm-6">
+    <div class="block_text" id="updates">
+        <h2>Updates</h2>
+        <h4>Wat is er nieuw?</h4>
+        <hr>
+        <table class="table">
+            <thead>
+            <th>Naam</th>
+            <th></th>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Download: Begroting almanak</td>
+                <td><a href="/downloads/1.pdf" class="btn btn-xs btn-primary">Download</a></td>
+            </tr>
+            <tr>
+                <td>Download: Convocaten AV 180</td>
+                <td><a href="/downloads/2.pdf" class="btn btn-xs btn-primary">Download</a></td>
+            </tr>
+            <tr>
+                <td>Fotoalbum: Van geel naar grijs diner</td>
+                <td><a href="/photoalbum" class="btn btn-xs btn-primary">Bekijk</a></td>
+            </tr>
+            <tr>
+                <td>Activitiet: Lustrumweekend</td>
+                <td><a href="/leden/activiteiten/1" class="btn btn-xs btn-primary">Bekijk</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="clear"></div>
+    </div>
+</div>
+
+<div ng-controller="news">
+    <div class="block_content_100 col-xs-12 col-sm-12">
+        <div class="block_text no_photo">
+            <h3>{$ (item|orderBy:orderNews)[1].title $} <span class="label label-primary" style="float: right;">Nieuw</span></h3>
+            <hr>
+            <p ng-bind-html="(item|orderBy:orderNews)[1].itemtext | characters:200 | html_trusted"></p>
+            <a class="meer" href="/nieuws/{$ (item|orderBy:orderNews)[1].id $}">Lees meer <i class="fa fa-angle-right"></i></a>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="block_content_100 col-xs-12 col-sm-12">
+        <div class="block_text no_photo">
+            <h3>{$ (item|orderBy:orderNews)[2].title $}</h3>
+            <hr>
+            <p ng-bind-html="(item|orderBy:orderNews)[2].itemtext | characters:200 | html_trusted"></p>
+            <a class="meer" href="/nieuws/{$ (item|orderBy:orderNews)[2].id $}">Lees meer <i class="fa fa-angle-right"></i></a>
+            <div class="clear"></div>
+        </div>
+    </div>
 </div>
 
 <div class="block_content_100 col-xs-12 col-sm-12">
     <div class="block_text no_photo">
-        <h1>Activiteiten</h1>
-        <h3>Eerstvolgende activiteiten</h3>
+        <h3>Oudere mededeling één dus..</h3>
+        <hr>
+        <p>Op dit moment is er geen internet op de loods beschikbaar. Hierdoor zullen de stukken voor AV 180 met vertraging worden gepubliceerd. Dit zal uiterlijk morgen zijn.</p>
+        <a class="meer" href="/nieuwsbestuur/0">Lees meer</a>
+        <div class="clear"></div>
+    </div>
+</div>
+
+<div class="block_content_50 col-xs-12 col-sm-6">
+    <div class="block_text" id="activiteit">
+        <h2>Activiteiten</h2>
+        <h4>Eerstvolgende activiteiten</h4>
         <hr>
         <table class="table">
             <thead>
-                <th>Naam</th>
-                <th>Datum</th>
-                <th>Sluiting</th>
-                <th>Kosten</th>
-                <th>Inschrijvingen</th>
-                <th></th>
+            <th>Naam</th>
+            <th>Datum</th>
+            <th>Kosten</th>
+            <th></th>
             </thead>
             <tbody>
-                <tr>
-                    <td><a href="/leden/maaltijd/1">Lustrumweekend: activiteiten, ontbijt en diner</a></td>
-                    <td>vrijdag 27 feb</td>
-                    <td>19 dec 23:59</td>
-                    <td>€ 35.00</td>
-                    <td>98 / 150</td>
-                    <td><a href="/leden/maaltijd/1/inschrijven" class="btn btn-xs btn-primary">Inschrijven</a></td>
-                </tr>
-                <tr>
-                    <td><a href="/leden/maaltijd/1">Lustrumweekend: activiteiten, ontbijt en diner</a></td>
-                    <td>vrijdag 27 feb</td>
-                    <td>19 dec 23:59</td>
-                    <td>€ 35.00</td>
-                    <td>98 / 150</td>
-                    <td><a href="/leden/maaltijd/1/inschrijven" class="btn btn-xs btn-primary">Inschrijven</a></td>
-                </tr>
+            <tr>
+                <td><a href="/leden/maaltijd/1">Lustrumweekend</a></td>
+                <td>vrijdag 27 feb</td>
+                <td>€ 35.00</td>
+                <td><a href="/leden/maaltijd/1/inschrijven" class="btn btn-xs btn-primary">Inschrijven</a></td>
+            </tr>
+            <tr>
+                <td><a href="/leden/maaltijd/1">Lustrumweek</a></td>
+                <td>vrijdag 7 juli</td>
+                <td>€ 99.95</td>
+                <td><a href="/leden/maaltijd/1/inschrijven" class="btn btn-xs btn-primary">Inschrijven</a></td>
+            </tr>
             </tbody>
         </table>
         <div class="clear"></div>
     </div>
-    <!--<p class="extra">
-        <a href="/leden/werkacties">Meer activiteiten</a>
-    </p>-->
+    <p class="extra">
+        <a href="/leden/werkacties">Meer details en activiteiten</a>
+    </p>
 </div>
 
-<div class="block_content_100 col-xs-12 col-sm-12">
+<div class="block_content_50 col-xs-12 col-sm-6">
+    <div class="block_text" id="compoladder">
+        <h2>Compoladder</h2>
+        <h4>De stand van zaken</h4>
+        <hr>
+        <div class="chart">
+            <div class="light" style="width: 10%;">10%</div><div class="dark" style="width: 8%;" data-toggle="tooltip" data-placement="right" title="Ploegje 1">8%</div>
+            <div class="light" style="width: 12%;">12%</div><div class="dark" style="width: 7%;" data-toggle="tooltip" data-placement="right" title="Ploegje 7">7%</div>
+            <div class="light" style="width: 23%;">23%</div><div class="dark" style="width: 8%;" data-toggle="tooltip" data-placement="right" title="Ploegje 8">8%</div>
+            <div class="light" style="width: 40%;">40%</div><div class="dark" style="width: 9%;" data-toggle="tooltip" data-placement="right" title="Ploegje 4">9%</div>
+            <div class="light" style="width: 40%;">40%</div><div class="dark" style="width: 11%;" data-toggle="tooltip" data-placement="right" title="Ploegje 6">11%</div>
+            <div class="light" style="width: 42%;">42%</div><div class="dark" style="width: 10%;" data-toggle="tooltip" data-placement="right" title="Ploegje 9">10%</div>
+            <div class="light" style="width: 47%;">47%</div><div class="dark" style="width: 12%;" data-toggle="tooltip" data-placement="right" title="Ploegje 3">12%</div>
+            <div class="light" style="width: 50%;">50%</div><div class="dark" style="width: 11%;" data-toggle="tooltip" data-placement="right" title="Ploegje 5">11%</div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <p class="extra">
+        <a href="/leden/competitieladder">Meer info</a>
+    </p>
+</div>
+
+<div ng-controller="news">
+    <div class="block_content_100 col-xs-12 col-sm-12">
+        <div class="block_text no_photo">
+            <h3>{$ (item|orderBy:orderNews)[3].title $}</h3>
+            <hr>
+            <p ng-bind-html="(item|orderBy:orderNews)[3].itemtext | characters:200 | html_trusted"></p>
+            <a class="meer" href="/nieuws/{$ (item|orderBy:orderNews)[3].id $}">Lees meer <i class="fa fa-angle-right"></i></a>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="block_content_100 col-xs-12 col-sm-12">
+        <div class="block_text no_photo">
+            <h3>{$ (item|orderBy:orderNews)[4].title $}</h3>
+            <hr>
+            <p ng-bind-html="(item|orderBy:orderNews)[4].itemtext | characters:200 | html_trusted"></p>
+            <a class="meer" href="/nieuws/{$ (item|orderBy:orderNews)[4].id $}">Lees meer <i class="fa fa-angle-right"></i></a>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+
+<!--<div class="block_content_100 col-xs-12 col-sm-12">
     <div class="block_text no_photo">
         <h1>Werkacties</h1>
         <h3>Eerstvolgende werkacties</h3>
@@ -160,7 +307,7 @@
         </table>
         <div class="clear"></div>
     </div>
-    <!--<p class="extra">
+    <p class="extra">
         <a href="/leden/werkacties">Meer werkacties</a>
-    </p>-->
-</div>
+    </p>
+</div>-->

@@ -30,7 +30,20 @@ angular.module('theta.main')
             }
         };
     })
-    .directive('headerbox', function() {return {templateUrl: 'partials/header-box.html'};})
+    .directive('headerbox', function($timeout) {
+        return {
+            templateUrl: 'partials/header-box.html',
+            link: function postLink(scope, element, attrs) {
+                $timeout(function () {
+                    angular.element(document).ready(function () {
+                        $('.box .box_100 .boxtitle').each(function () {
+                            $(this).css('height', $(this).parents('.box').find('.box_100').height());
+                        });
+                    });
+                }, 0);
+            }
+        };
+    })
     .directive('newsindex', function($timeout) {
         return {
             templateUrl: 'partials/news-index.html',

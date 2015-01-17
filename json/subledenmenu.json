@@ -28,7 +28,7 @@
 }, {
   "fields": {
     "item": "Downloads",
-    "item_position": 5,
+    "item_position": 6,
     "item_url": "/leden/downloads",
     "parent_submenu": 2
   },
@@ -87,6 +87,15 @@
     "parent_submenu": 4
   },
   "pk": 10,
+  "model": "index.subledenmenu"
+}, {
+  "fields": {
+    "item": "Schades aan boten",
+    "item_position": 5,
+    "item_url": "/leden/schades",
+    "parent_submenu": 2
+  },
+  "pk": 11,
   "model": "index.subledenmenu"
 }
 ]
