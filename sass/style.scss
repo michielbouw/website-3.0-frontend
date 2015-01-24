@@ -218,6 +218,11 @@ p {
   border: none;
 }
 
+.label-primary {
+  background-color: $blue;
+  border-radius: 0;
+}
+
 .btn {
   a {
     text-decoration: none;
@@ -1256,7 +1261,7 @@ ol, ul {
         }
       }
       .poll {
-        padding: 15px;
+        padding: 20px;
         font-size: 12px;
         background: $lightgrey;
         p {
@@ -1264,6 +1269,48 @@ ol, ul {
         }
         .progress {
           margin-bottom: 5px;
+        }
+        .result {
+          div {
+            font-size: 10px;
+            color: $black;
+            background-color: $yellow;
+            text-align: right;
+            padding: 0 3px;
+            margin: 1px;
+            min-width: 10%;
+          }
+        }
+      }
+      .compoladder {
+        padding: 0 20px 15px 20px;
+        background: $lightgrey;
+        p {
+          margin: 0;
+          padding: 15px 0 10px 0;
+        }
+        .chart {
+          div.light {
+            font-size: 10px;
+            background-color: $grey;
+            text-align: right;
+            padding: 0 3px;
+            margin: 1px;
+            min-width: 7%;
+            color: white;
+            float: left;
+            clear: left;
+          }
+          div.dark {
+            font-size: 10px;
+            background-color: $blue;
+            text-align: right;
+            padding: 0 3px;
+            margin: 1px;
+            min-width: 7%;
+            color: white;
+            float: left;
+          }
         }
       }
       .photo {
@@ -1385,7 +1432,7 @@ ol, ul {
       float: left;
       width: 30%;
       height: auto;
-      min-height: 230px;
+      //min-height: 200px;
       background-size: cover;
       background-position: center center;
       @include imagesharpening;
@@ -1466,27 +1513,6 @@ ol, ul {
       }
       #spam, #frust {
         font-size: 12px;
-      }
-      .chart {
-        div.light {
-          font: 10px sans-serif;
-          background-color: $grey;
-          text-align: right;
-          padding: 3px;
-          margin: 1px;
-          color: white;
-          float: left;
-          clear: left;
-        }
-        div.dark {
-          font: 10px sans-serif;
-          background-color: $blue;
-          text-align: right;
-          padding: 3px;
-          margin: 1px;
-          color: white;
-          float: left;
-        }
       }
     }
     .featured_image {

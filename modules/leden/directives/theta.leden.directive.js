@@ -66,19 +66,11 @@ angular.module('theta.leden')
                             }
                         });
                         $('.content .content-page .block_content_50 #hap').each(function () {
-                            if ($(this).parents('.content-page').find('#updates').height() >= $(this).height()) {
-                                $(this).css('height', $(this).parents('.content-page').find('#updates').height()+30);
+                            if ($(this).parents('.content-page').find('#activiteit').height() >= $(this).height()) {
+                                $(this).css('height', $(this).parents('.content-page').find('#activiteit').height()+30);
                             }
                             else {
-                                $(this).parents('.content-page').find('#updates').css('height', $(this).height()+30);
-                            }
-                        });
-                        $('.content .content-page .block_content_50 #activiteit').each(function () {
-                            if ($(this).parents('.content-page').find('#compoladder').height() >= $(this).height()) {
-                                $(this).css('height', $(this).parents('.content-page').find('#compoladder').height()+30);
-                            }
-                            else {
-                                $(this).parents('.content-page').find('#compoladder').css('height', $(this).height()+30);
+                                $(this).parents('.content-page').find('#activiteit').css('height', $(this).height()+30);
                             }
                         });
                     });
